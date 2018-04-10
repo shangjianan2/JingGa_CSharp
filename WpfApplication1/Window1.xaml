@@ -13,6 +13,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBox x:Name="Passwd_TextBox" Grid.Column="0" Grid.ColumnSpan="2" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button x:Name="Passwd_Button" Grid.Column="2" Width="50" Height="20"/>
+        <Button x:Name="Passwd_Button" Click="Passwd_Button_Click" Grid.Column="2" Width="50" Height="20"/>
     </Grid>
 </Window>

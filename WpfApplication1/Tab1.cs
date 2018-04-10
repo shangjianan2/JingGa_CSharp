@@ -39,16 +39,23 @@ namespace WpfApplication1
         {
             if (Tab1_ComboBox.SelectedItem == null)
                 return;
-            Window1 passwd_Form2 = new Window1();
-            passwd_Form2.ShowDialog();
-            if (Tab1_ComboBox.SelectedItem.ToString() == "root")
-            {
-                tabcontrol.SelectedIndex = 1;//管理员界面
 
-            }
-            else
+            DataSet dataSet_temp = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, "select password from users where name=" + "\'" + Tab1_ComboBox.SelectedItem.ToString() + "\'", null);
+            DataRowCollection temp_DataRow = dataSet_temp.Tables[0].Rows;
+            passwd_str = temp_DataRow[0][0].ToString();
+
+            Window1 passwd_Form2 = new Window1(this);
+            passwd_Form2.ShowDialog();
+            if (passwd_Form2.DialogResult == true)
             {
-                tabcontrol.SelectedIndex = 2;//用户界面
+                if (Tab1_ComboBox.SelectedItem.ToString() == "root")
+                {
+                    tabcontrol.SelectedIndex = 1;
+                }
+                else
+                {
+                    tabcontrol.SelectedIndex = 2;
+                }
             }
         }
 
