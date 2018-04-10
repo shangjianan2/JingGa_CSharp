@@ -162,7 +162,55 @@
 
 				</Grid>
 			</TabItem>
-			<TabItem x:Name="Tab5" Height="0"/>
+			<TabItem x:Name="Tab5" Height="0">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="*"/>
+					</Grid.RowDefinitions>
+					<GroupBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Width="300" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="6"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="2"/>
+							</Grid.RowDefinitions>
+							<Label Content="ID" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Label Content="名称" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Label Content="编码" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Label Content="说明" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+							<TextBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
+							<TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
+							<TextBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
+							<TextBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
+
+							<Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="25"/>
+							<Button Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="25"/>
+						</Grid>
+					</GroupBox>
+
+					<ListView Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Height="Auto" Width="Auto">
+						
+					</ListView>
+
+                    <Button x:Name="Tab5_Back_Button" Click="Tab5_Back_Button_Click" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="90" Margin="0, 0, 5, 5"/>
+
+				</Grid>
+			</TabItem>
 			<TabItem x:Name="Tab6" Height="0"/>
 			<TabItem x:Name="Tab7" Height="0"/>
 			<TabItem x:Name="Tab8" Height="0"/>
