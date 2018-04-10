@@ -73,6 +73,51 @@
 							</GridView>
 						</ListView.View>
 					</ListView>
+					<Grid Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="*"/>
+						</Grid.RowDefinitions>
+						<TextBox Grid.Column="0" Grid.Row="1" Width="Auto" Height="20"/>
+						<TextBox Grid.Column="1" Grid.Row="1" Width="Auto" Height="20"/>
+						<TextBox Grid.Column="2" Grid.Row="1" Width="Auto" Height="20"/>
+						<TextBox Grid.Column="3" Grid.Row="1" Width="Auto" Height="20"/>
+						<TextBox Grid.Column="4" Grid.Row="1" Width="Auto" Height="20"/>
+
+						<TextBox Grid.Column="0" Grid.Row="2" Width="Auto" Height="20"/>
+						<TextBox Grid.Column="1" Grid.Row="2" Width="Auto" Height="20"/>
+						<TextBox Grid.Column="2" Grid.Row="2" Width="Auto" Height="20"/>
+						<TextBox Grid.Column="3" Grid.Row="2" Width="Auto" Height="20"/>
+						<Button Grid.Column="4" Grid.Row="2" Width="Auto" Height="20"/>
+
+						<Label Content="开始年份" Grid.Column="0" Grid.Row="1" Margin="0, -6, 0, 0" HorizontalAlignment="Center"/>
+						<Label Content="开始月份" Grid.Column="1" Grid.Row="1" Margin="0, -6, 0, 0" HorizontalAlignment="Center"/>
+						<Label Content="开始日期" Grid.Column="2" Grid.Row="1" Margin="0, -6, 0, 0" HorizontalAlignment="Center"/>
+						<Label Content="开始时间" Grid.Column="3" Grid.Row="1" Margin="0, -6, 0, 0" HorizontalAlignment="Center"/>
+						<Label Content="通道号" Grid.Column="4" Grid.Row="1" Margin="0, -6, 0, 0" HorizontalAlignment="Center"/>
+
+						<Label Content="终止年份" Grid.Column="0" Grid.Row="2" Margin="0, -6, 0, 0" HorizontalAlignment="Center"/>
+						<Label Content="终止月份" Grid.Column="1" Grid.Row="2" Margin="0, -6, 0, 0" HorizontalAlignment="Center"/>
+						<Label Content="终止日期" Grid.Column="2" Grid.Row="2" Margin="0, -6, 0, 0" HorizontalAlignment="Center"/>
+						<Label Content="终止时间" Grid.Column="3" Grid.Row="2" Margin="0, -6, 0, 0" HorizontalAlignment="Center"/>
+						<Label Content="查询按键" Grid.Column="4" Grid.Row="2" Margin="0, -6, 0, 0" HorizontalAlignment="Center"/>
+					</Grid>
+					<ListView Height="Auto" Width="Auto"  Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="1">
+						<ListView.View>
+							<GridView>
+								<GridViewColumn/>
+							</GridView>
+						</ListView.View>
+					</ListView>
 					<Button x:Name="Tab3_Back_Button" Click="Tab3_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5"/>
 				</Grid>
 			</TabItem>
