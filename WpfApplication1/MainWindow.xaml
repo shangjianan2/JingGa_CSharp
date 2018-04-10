@@ -1,0 +1,85 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="700" Width="1000">
+    <Grid>
+        <TabControl x:Name="tabcontrol" HorizontalAlignment="Stretch" Height="Auto" Margin="-6,-10,-6,-6" VerticalAlignment="Stretch" Width="Auto">
+			<TabItem x:Name="Tab1" Height="0">
+				<ComboBox x:Name="Tab1_ComboBox" SelectionChanged="Tab1_ComboBox_SelectionChanged" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100"/>
+			</TabItem>
+			<TabItem x:Name="Tab2" Height="0">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="100"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="50"/>
+					</Grid.RowDefinitions>
+					<ComboBox x:Name="Tab2_ComboBox" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100"/>
+					<Button x:Name="Tab2_Back_Button" Click="Tab2_Back_Button_Click" Grid.Column="1" Grid.Row="1" Width="90" Height="40"/>
+				</Grid>
+			</TabItem>
+			<TabItem x:Name="Tab3" Height="0">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="100"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="100"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="50"/>
+					</Grid.RowDefinitions>
+					<Canvas>
+						<Image x:Name="img" Source="C:\Users\windows7\Desktop\timg.jpg"    
+							MouseDown="img_MouseDown" MouseWheel="img_MouseWheel"
+							MouseMove="img_MouseMove"
+							MouseUp="img_MouseUp"
+							MouseLeave="img_MouseLeave"
+							Stretch="Uniform"  
+							RenderOptions.BitmapScalingMode="NearestNeighbor" Canvas.Top="-100" Canvas.Left="-100">
+
+							<Image.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform x:Name="sfr" />
+									<TranslateTransform x:Name="tlt" />
+								</TransformGroup>
+							</Image.RenderTransform>
+						</Image>
+
+						<Rectangle x:Name="rectangle1" Fill="Red" Height="10" Width="10" Canvas.Left="150" Canvas.Top="200">
+							<Rectangle.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform x:Name="sfr2" />
+									<TranslateTransform x:Name="tlt2" />
+								</TransformGroup>
+							</Rectangle.RenderTransform>
+						</Rectangle>
+					</Canvas>
+					<Rectangle Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Fill="SlateGray"/>
+					<Button x:Name="Tab3_Back_Button" Click="Tab3_Back_Button_Click" Grid.Column="5" Grid.Row="1" Width="90" Height="40"/>
+				</Grid>
+			</TabItem>
+			<TabItem x:Name="Tab4" Height="0">
+				
+			</TabItem>
+			<TabItem x:Name="Tab5" Height="0">
+				
+			</TabItem>
+			<TabItem x:Name="Tab6" Height="0">
+				
+			</TabItem>
+			<TabItem x:Name="Tab7" Height="0">
+				
+			</TabItem>
+			<TabItem x:Name="Tab8" Height="0">
+				
+			</TabItem>
+		</TabControl>
+    </Grid>
+</Window>
