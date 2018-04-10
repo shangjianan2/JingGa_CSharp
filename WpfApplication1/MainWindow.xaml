@@ -39,7 +39,7 @@
 						<RowDefinition Height="50"/>
 					</Grid.RowDefinitions>
 					<Canvas Grid.RowSpan="3">
-						<Image x:Name="img" Source="C:\Users\windows7\Desktop\timg.jpg"    
+                        <Image x:Name="img" Source="E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\timg.jpg"    
 							MouseDown="img_MouseDown" MouseWheel="img_MouseWheel"
 							MouseMove="img_MouseMove"
 							MouseUp="img_MouseUp"
@@ -228,7 +228,7 @@
 						<RowDefinition Height="50"/>
 					</Grid.RowDefinitions>
 					<Canvas Grid.RowSpan="3">
-						<Image x:Name="img_Tab6" Source="C:\Users\windows7\Desktop\timg.jpg"    
+                        <Image x:Name="img_Tab6" Source="E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\timg.jpg"    
 							MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
 							MouseMove="img_MouseMove_Tab6"
 							MouseUp="img_MouseUp_Tab6"
