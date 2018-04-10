@@ -25,3 +25,6 @@ E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication
 E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.csproj.CoreCompileInputs.cache
 E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.exe
 E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1.pdb
+E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\obj\Debug\Window1.g.cs
+E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\obj\Debug\WpfApplication1_MarkupCompile.lref
+E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\obj\Debug\Window1.baml

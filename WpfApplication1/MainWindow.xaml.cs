@@ -33,34 +33,7 @@ namespace WpfApplication1
             Init_Tab2_ComboBox();
         }
 
-        public void Init_Tab1_ComboBox()
-        {
-            Tab1_ComboBox.Items.Clear();
-            Tab1_ComboBox.Items.Add("root");
-            Tab1_ComboBox.Items.Add("用户1");
-            Tab1_ComboBox.Items.Add("用户2");
-            //Tab1_ComboBox.Items.Add(" ");
-        }
-
-        private void Tab1_ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (Tab1_ComboBox.SelectedItem == null)
-                return;
-            if (Tab1_ComboBox.SelectedItem.ToString() == "root")
-            {
-                tabcontrol.SelectedIndex = 1;//管理员界面
-            }
-            else
-            {
-                tabcontrol.SelectedIndex = 2;//用户界面
-            }
-        }
-
-        private void Tab1_Button_Click(object sender, RoutedEventArgs e)
-        {
-            //Tab2.Visibility = System.Windows.Visibility.Visible;
-            tabcontrol.SelectedIndex = 1;
-        }
+        
 
 
         //tab2
