@@ -121,7 +121,7 @@
                                 <GridViewColumn Header="DanWei" Width="70" DisplayMemberBinding="{Binding Path=DanWei}"/>
                                 
                                 <GridViewColumn Header="Status" Width="70" DisplayMemberBinding="{Binding Path=Status}"/>
-                                <GridViewColumn Header="NongDu" Width="70" DisplayMemberBinding="{Binding Path=NondDu}"/>
+                                <GridViewColumn Header="NongDu" Width="70" DisplayMemberBinding="{Binding Path=NongDu}"/>
                                 <GridViewColumn Header="DiXian" Width="70" DisplayMemberBinding="{Binding Path=DiXian}"/>
                                 <GridViewColumn Header="GaoXian" Width="70" DisplayMemberBinding="{Binding Path=GaoXian}"/>
                                 <GridViewColumn Header="DianLiang" Width="70" DisplayMemberBinding="{Binding Path=DianLiang}"/>
