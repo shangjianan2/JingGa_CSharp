@@ -16,6 +16,11 @@ using System.Windows.Shapes;
 using System.Data;
 using MySQL_Funtion;
 
+using UDP_Thread;
+using System.Net;
+using System.Net.Sockets;
+using System.ComponentModel;
+
 namespace WpfApplication1
 {
     /// <summary>
@@ -33,6 +38,8 @@ namespace WpfApplication1
         const int size_column = 12;
         public test5_mem[] test5_Mem_array = new test5_mem[size_chanel];
 
+        public UDP_Communication mysql_Thread = new UDP_Communication(new byte[4] { 10, 137, 8, 15 }, 2333);
+
         public MainWindow()
         {
             InitializeComponent();
@@ -40,7 +47,46 @@ namespace WpfApplication1
             Init_Tab2_ComboBox();
             Init_Tab3_CurrentStatus_ListView(ref test5_Mem_array, Tab3_CurrentStatus_ListView);
             Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
+
+            //注册事件
+            mysql_Thread.rev_New2 += new recNewMessage2(rec2_NewMessage_Form1);
+            mysql_Thread.recThread_Start();
+
+            //System.Windows.Threading.DispatcherTimer readDataTimer = new System.Windows.Threading.DispatcherTimer();
+
+            //readDataTimer.Tick += new EventHandler(timeCycle);
+            //readDataTimer.Interval = new TimeSpan(0, 0, 0, 1);
+            //readDataTimer.Start();
         }
+
+        //public void timeCycle(object sender, EventArgs e)
+        //{
+        //    //Init_Tab3_CurrentStatus_ListView(ref test5_Mem_array, Tab3_CurrentStatus_ListView);
+        //    Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
+        //}
+
+        #region//rec2_NewMessage_Form1函数是rec_NewMessage_Form1函数的新的实现，可以返回源地址和源端口
+        public void rec2_NewMessage_Form1(byte[] message, ref EndPoint endPoint_tt)
+        {
+            //if (message.Length != 14)//数据的有效性还需要检验，但是暂时没有想到靠谱的方法
+            //    return;
+            //显示源地址和源端口
+            System.Diagnostics.Debug.WriteLine(endPoint_tt.ToString());
+
+
+            string[] temp_array_str = ShuJuJieXi(message);
+            string str = "INSERT INTO test5 ( `id`, `name`, `type`, `gas type`, `DanWei`,`status`, `NongDu`, `DiXian`, `GaoXian`, `DianLiang`, `WenDu`, `Date` ) " +
+        "VALUES ( \"1\",\"2\",\"3\",\"" + temp_array_str[0] + "\",\"" + temp_array_str[1] + "\",\"" + temp_array_str[2] + "\",\"" + temp_array_str[3] + "\",\"" + temp_array_str[4] + "\",\"" + temp_array_str[5] + "\",\"" + temp_array_str[6] + "\",\"" + temp_array_str[7] + "\",now());";
+            MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, str, null);
+
+            Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
+            //Action<bool> action_tt = (x) =>
+            //{
+            //    Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
+            //};
+            //Tab3_CurrentStatus_ListView.Dispatcher.Invoke(action_tt, true);
+        }
+        #endregion
 
         public void Init_Tab3_CurrentStatus_ListView(ref test5_mem[] test5_Mem_array_tt, ListView listView_tt)
         {
@@ -276,8 +322,10 @@ namespace WpfApplication1
         #endregion
     }
 
-    public class test5_mem
+    public class test5_mem : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private string id;
         private string name;
         private string type;
@@ -306,6 +354,7 @@ namespace WpfApplication1
                 {
                     id = value;
                 }
+                OnPropertyChanged("ID");
             }
         }
 
@@ -322,6 +371,7 @@ namespace WpfApplication1
                 {
                     name = value;
                 }
+                OnPropertyChanged("Name");
             }
         }
 
@@ -338,6 +388,7 @@ namespace WpfApplication1
                 {
                     type = value;
                 }
+                OnPropertyChanged("Type");
             }
         }
 
@@ -354,6 +405,7 @@ namespace WpfApplication1
                 {
                     gas_type = value;
                 }
+                OnPropertyChanged("Gas_Type");
             }
         }
 
@@ -370,6 +422,7 @@ namespace WpfApplication1
                 {
                     danwei = value;
                 }
+                OnPropertyChanged("DanWei");
             }
         }
 
@@ -386,7 +439,9 @@ namespace WpfApplication1
                 {
                     status = value;
                 }
+                OnPropertyChanged("Status");
             }
+            
         }
 
         public string NongDu
@@ -402,6 +457,7 @@ namespace WpfApplication1
                 {
                     nongdu = value;
                 }
+                OnPropertyChanged("NongDu");
             }
         }
 
@@ -418,6 +474,7 @@ namespace WpfApplication1
                 {
                     dixian = value;
                 }
+                OnPropertyChanged("DiXian");
             }
         }
 
@@ -434,6 +491,7 @@ namespace WpfApplication1
                 {
                     gaoxian = value;
                 }
+                OnPropertyChanged("GaoXian");
             }
         }
 
@@ -450,6 +508,7 @@ namespace WpfApplication1
                 {
                     dianliang = value;
                 }
+                OnPropertyChanged("DianLiang");
             }
         }
 
@@ -466,6 +525,7 @@ namespace WpfApplication1
                 {
                     wendu = value;
                 }
+                OnPropertyChanged("WenDu");
             }
         }
 
@@ -482,6 +542,15 @@ namespace WpfApplication1
                 {
                     date = value;
                 }
+                OnPropertyChanged("Date");
+            }
+        }
+
+        private void OnPropertyChanged(string strPropertyInfo)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(strPropertyInfo));
             }
         }
     }
