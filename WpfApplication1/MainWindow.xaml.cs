@@ -51,19 +51,7 @@ namespace WpfApplication1
             //注册事件
             mysql_Thread.rev_New2 += new recNewMessage2(rec2_NewMessage_Form1);
             mysql_Thread.recThread_Start();
-
-            //System.Windows.Threading.DispatcherTimer readDataTimer = new System.Windows.Threading.DispatcherTimer();
-
-            //readDataTimer.Tick += new EventHandler(timeCycle);
-            //readDataTimer.Interval = new TimeSpan(0, 0, 0, 1);
-            //readDataTimer.Start();
         }
-
-        //public void timeCycle(object sender, EventArgs e)
-        //{
-        //    //Init_Tab3_CurrentStatus_ListView(ref test5_Mem_array, Tab3_CurrentStatus_ListView);
-        //    Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
-        //}
 
         #region//rec2_NewMessage_Form1函数是rec_NewMessage_Form1函数的新的实现，可以返回源地址和源端口
         public void rec2_NewMessage_Form1(byte[] message, ref EndPoint endPoint_tt)
@@ -80,11 +68,6 @@ namespace WpfApplication1
             MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, str, null);
 
             Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
-            //Action<bool> action_tt = (x) =>
-            //{
-            //    Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
-            //};
-            //Tab3_CurrentStatus_ListView.Dispatcher.Invoke(action_tt, true);
         }
         #endregion
 
