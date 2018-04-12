@@ -26,11 +26,20 @@ namespace WpfApplication1
         private bool isMouseLeftButtonDown_Tab6 = false;
         Point previousMousePoint_Tab6 = new Point(0, 0);
 
+        const int size_chanel = 64;
+        public test5_mem[] test5_Mem_array = new test5_mem[size_chanel];
+
         public MainWindow()
         {
             InitializeComponent();
             Init_Tab1_ComboBox();
             Init_Tab2_ComboBox();
+            Init_test5_mem_array(test5_Mem_array, size_chanel, Tab3_CurrentStatus_ListView);
+        }
+
+        public void Init_test5_mem_array(test5_mem[] test5_Mem_array_tt, int size_chanel_tt, ListView listView_tt)
+        {
+            listView_tt.ItemsSource = test5_Mem_array_tt;
         }
 
         
@@ -222,5 +231,215 @@ namespace WpfApplication1
             this.sfr2_Tab6.ScaleY += e.Delta / 1000.0;
         }
         #endregion
+    }
+
+    public class test5_mem
+    {
+        private string id;
+        private string name;
+        private string type;
+        private string gas_type;
+        private string danwei;
+
+        private string status;
+        private string nongdu;
+        private string dixian;
+        private string gaoxian;
+        private string dianliang;
+
+        private string wendu;
+        private string date;
+
+        public string ID
+        {
+            get { return id; }
+            set
+            {
+                if(value == null)
+                {
+                    id = " ";
+                }
+                else
+                {
+                    id = value;
+                }
+            }
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                if(value == null)
+                {
+                    name = " ";
+                }
+                else
+                {
+                    name = value;
+                }
+            }
+        }
+
+        public string Type
+        {
+            get { return type; }
+            set
+            {
+                if(value == null)
+                {
+                    type = " ";
+                }
+                else
+                {
+                    type = value;
+                }
+            }
+        }
+
+        public string Gas_Type
+        {
+            get { return gas_type; }
+            set
+            {
+                if(value == null)
+                {
+                    gas_type = " ";
+                }
+                else
+                {
+                    gas_type = value;
+                }
+            }
+        }
+
+        public string DanWei
+        {
+            get { return danwei; }
+            set
+            {
+                if(value == null)
+                {
+                    danwei = " ";
+                }
+                else
+                {
+                    danwei = value;
+                }
+            }
+        }
+
+        public string Status
+        {
+            get { return status; }
+            set
+            {
+                if(value == null)
+                {
+                    status = " ";
+                }
+                else
+                {
+                    status = value;
+                }
+            }
+        }
+
+        public string NongDu
+        {
+            get { return nongdu; }
+            set
+            {
+                if(value == null)
+                {
+                    nongdu = " ";
+                }
+                else
+                {
+                    nongdu = value;
+                }
+            }
+        }
+
+        public string DiXian
+        {
+            get { return dixian; }
+            set
+            {
+                if(value == null)
+                {
+                    dixian = " ";
+                }
+                else
+                {
+                    dixian = value;
+                }
+            }
+        }
+
+        public string GaoXian
+        {
+            get { return gaoxian; }
+            set
+            {
+                if(value == null)
+                {
+                    gaoxian = " ";
+                }
+                else
+                {
+                    gaoxian = value;
+                }
+            }
+        }
+
+        public string DianLiang
+        {
+            get { return dianliang; }
+            set
+            {
+                if(value == null)
+                {
+                    dianliang = " ";
+                }
+                else
+                {
+                    dianliang = value;
+                }
+            }
+        }
+
+        public string WenDu
+        {
+            get { return wendu; }
+            set
+            {
+                if(value == null)
+                {
+                    wendu = " ";
+                }
+                else
+                {
+                    wendu = value;
+                }
+            }
+        }
+
+        public string Date
+        {
+            get { return date; }
+            set
+            {
+                if(value == null)
+                {
+                    date = " ";
+                }
+                else
+                {
+                    date = value;
+                }
+            }
+        }
     }
 }
