@@ -62,6 +62,7 @@
     <Compile Include="ShiJianQuJian_GroupBox.cs" />
     <Compile Include="ShuJuJieXi.cs" />
     <Compile Include="Tab1.cs" />
+    <Compile Include="Tab3.cs" />
     <Compile Include="UDP_Thread.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
