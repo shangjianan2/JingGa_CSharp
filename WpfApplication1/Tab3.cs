@@ -134,7 +134,7 @@ namespace WpfApplication1
         private void Tab3_Back_Button_Click(object sender, RoutedEventArgs e)
         {
             tabcontrol.SelectedIndex = 0;
-            Init_Tab1_ComboBox();
+            Init_Tab1_ComboBox();            
         }
     }
 }

@@ -55,6 +55,7 @@ namespace WpfApplication1
                 else
                 {
                     tabcontrol.SelectedIndex = 2;
+                    Init_ShiJianQuJian_ComboBox_CurrentTime();//每次切换到用户界面的时候更新时间
                 }
             }
         }

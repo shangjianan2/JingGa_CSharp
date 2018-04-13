@@ -32,10 +32,26 @@ namespace WpfApplication1
             return output_str;
         }
 
-        public void Init_ShiJianQuJian_GroupBox()
+        public void Init_ShiJianQuJian_ComboBox_CurrentTime()
         {
             string[] time_str_array = null;
+            //输入开机时间
+            time_str_array = CurrentTime();
+            BeginYear_ComboBox.Text = time_str_array[0];
+            EndYear_ComboBox.Text = time_str_array[0];
 
+            BeginMonth_ComboBox.Text = time_str_array[1];
+            EndMonth_ComboBox.Text = time_str_array[1];
+
+            BeginDay_ComboBox.Text = time_str_array[2];
+            EndDay_ComboBox.Text = time_str_array[2];
+
+            BeginHour_ComboBox.Text = time_str_array[3];
+            EndHour_ComboBox.Text = time_str_array[3];
+        }
+
+        public void Init_ShiJianQuJian_GroupBox()
+        {       
             BeginYear_ComboBox.Items.Add("2017");
             BeginYear_ComboBox.Items.Add("2018");
 
@@ -66,19 +82,7 @@ namespace WpfApplication1
             }
             ChanelNum_ComboBox.Items.Add("None");
 
-            //输入开机时间
-            time_str_array = CurrentTime();
-            BeginYear_ComboBox.Text = time_str_array[0];
-            EndYear_ComboBox.Text = time_str_array[0];
-
-            BeginMonth_ComboBox.Text = time_str_array[1];
-            EndMonth_ComboBox.Text = time_str_array[1];
-
-            BeginDay_ComboBox.Text = time_str_array[2];
-            EndDay_ComboBox.Text = time_str_array[2];
-
-            BeginHour_ComboBox.Text = time_str_array[3];
-            EndHour_ComboBox.Text = time_str_array[3];
+            Init_ShiJianQuJian_ComboBox_CurrentTime();
         }
 
         private void OutputExcel_Button_Click(object sender, EventArgs e)
