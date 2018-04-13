@@ -21,65 +21,62 @@ namespace WpfApplication1
         DateTime date_end = new DateTime();
         ListViewItem[] lvi_excel = new ListViewItem[] { };
 
-        //public void Init_ShiJianQuJian_GroupBox()
-        //{
-        //    BeginYear_ComboBox.Items.Add("2017");
-        //    BeginYear_ComboBox.Items.Add("2018");
-
-        //    EndYear_ComboBox.Items.Add("2017");
-        //    EndYear_ComboBox.Items.Add("2018");
-
-        //    for(int i = 0; i < 12; i++)
-        //    {
-        //        BeginMonth_ComboBox.Items.Add((i + 1).ToString());
-        //        EndMonth_ComboBox.Items.Add((i + 1).ToString());
-        //    }
-
-        //    for(int i = 0; i < 31; i++)
-        //    {
-        //        BeginDay_ComboBox.Items.Add((i + 1).ToString());
-        //        EndDay_ComboBox.Items.Add((i + 1).ToString());
-        //    }
-
-        //    for(int i = 0; i < 24; i++)
-        //    {
-        //        BeginHour_ComboBox.Items.Add((i + 1).ToString());
-        //        EndHour_ComboBox.Items.Add((i + 1).ToString());
-        //    }
-
-            
-        //}
-
-        private void OutputExcel_Button_Click(object sender, EventArgs e)
+        public void Init_ShiJianQuJian_GroupBox()
         {
-            //try
-            //{
-                //string temp_str_begin = BeginYear_ComboBox.Text + " " + BeginMonth_ComboBox.Text + " " + BeginDay_ComboBox.Text + " " + BeginHour_ComboBox.Text;
-                //string temp_str_end = EndYear_ComboBox.Text + " " + EndMonth_ComboBox.Text + " " + EndDay_ComboBox.Text + " " + EndHour_ComboBox.Text;
-                //date_begin = DateTime.ParseExact(temp_str_begin, "yyyy M d H", null);
-                //date_end = DateTime.ParseExact(temp_str_end, "yyyy M d H", null);
-                //Update_Excel_ListView(Excel_ListView, lvi_excel);
-                
-                #region
-                //System.Windows.Controls.SaveFileDialog sfd = new SaveFileDialog();//注意 这里是SaveFileDialog,不是OpenFileDialog
-            Microsoft.Win32.SaveFileDialog sfd = new Microsoft.Win32.SaveFileDialog();
-            sfd.DefaultExt = "xls";
-                sfd.Filter = "文件(*.xls)|*.xls";
-                if (sfd.ShowDialog() == true)
-                {
-                    //DoExport(listView_tt, sfd.FileName);//网上的例程
-                output_excel(sfd.FileName);
+            BeginYear_ComboBox.Items.Add("2017");
+            BeginYear_ComboBox.Items.Add("2018");
+
+            EndYear_ComboBox.Items.Add("2017");
+            EndYear_ComboBox.Items.Add("2018");
+
+            for (int i = 0; i < 12; i++)
+            {
+                BeginMonth_ComboBox.Items.Add((i + 1).ToString());
+                EndMonth_ComboBox.Items.Add((i + 1).ToString());
             }
-                #endregion
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("日期格式错误", "error");
-            //    return;
-            //}
+
+            for (int i = 0; i < 31; i++)
+            {
+                BeginDay_ComboBox.Items.Add((i + 1).ToString());
+                EndDay_ComboBox.Items.Add((i + 1).ToString());
+            }
+
+            for (int i = 0; i < 24; i++)
+            {
+                BeginHour_ComboBox.Items.Add((i + 1).ToString());
+                EndHour_ComboBox.Items.Add((i + 1).ToString());
+            }
 
 
         }
+
+        private void OutputExcel_Button_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string temp_str_begin = BeginYear_ComboBox.Text + " " + BeginMonth_ComboBox.Text + " " + BeginDay_ComboBox.Text + " " + BeginHour_ComboBox.Text;
+                string temp_str_end = EndYear_ComboBox.Text + " " + EndMonth_ComboBox.Text + " " + EndDay_ComboBox.Text + " " + EndHour_ComboBox.Text;
+                date_begin = DateTime.ParseExact(temp_str_begin, "yyyy M d H", null);
+                date_end = DateTime.ParseExact(temp_str_end, "yyyy M d H", null);
+
+                #region
+                Microsoft.Win32.SaveFileDialog sfd = new Microsoft.Win32.SaveFileDialog();
+                sfd.DefaultExt = "xls";
+                sfd.Filter = "文件(*.xls)|*.xls";
+                if (sfd.ShowDialog() == true)
+                {
+                    output_excel(sfd.FileName);
+                }
+                #endregion
+            }
+            catch
+            {
+                MessageBox.Show("日期格式错误", "error");
+                return;
+            }
+
+
+}
 
         public void output_excel(string strFileName)
         {
@@ -114,8 +111,8 @@ namespace WpfApplication1
 
 
             //添加列
-            //string dataSet_temp_str = "select * from test5 where `Date`>=\"" + date_begin.ToString() + "\" and `Date`<=\"" + date_end.ToString() + "\" order by `Date` desc";
-            string dataSet_temp_str = "select * from test5 order by `Date` desc";
+            string dataSet_temp_str = "select * from test5 where `Date`>=\"" + date_begin.ToString() + "\" and `Date`<=\"" + date_end.ToString() + "\" order by `Date` desc";
+            //string dataSet_temp_str = "select * from test5 order by `Date` desc";
             DataSet dataSet_temp = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, dataSet_temp_str, null);
             DataRowCollection temp_DataRow = dataSet_temp.Tables[0].Rows;//获取列
 

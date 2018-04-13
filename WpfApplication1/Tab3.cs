@@ -24,7 +24,7 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
-        //这里的代码是用户界面
+        //这里的代码是用户界面 还有部分代码存放在ShiJianQuJian_GroupBox.cs文件中（主要是有关于excel生成的代码）
         const int size_chanel = 64;
         const int size_column = 12;
         public test5_mem[] test5_Mem_array = new test5_mem[size_chanel];

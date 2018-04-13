@@ -99,16 +99,16 @@
                         <Label Content="终止时间" Grid.Column="3" Grid.Row="2" Margin="0, -6, 0, 0" HorizontalAlignment="Center"/>
                         <Label Content="查询按键" Grid.Column="4" Grid.Row="2" Margin="0, -6, 0, 0" HorizontalAlignment="Center"/>
 
-                        <ComboBox Grid.Column="0" Grid.Row="1" Width="Auto" Height="20"/>
-						<ComboBox Grid.Column="1" Grid.Row="1" Width="Auto" Height="20"/>
-						<ComboBox Grid.Column="2" Grid.Row="1" Width="Auto" Height="20"/>
-						<ComboBox Grid.Column="3" Grid.Row="1" Width="Auto" Height="20"/>
-						<ComboBox Grid.Column="4" Grid.Row="1" Width="Auto" Height="20"/>
+                        <ComboBox x:Name="BeginYear_ComboBox" Grid.Column="0" Grid.Row="1" Width="Auto" Height="20"/>
+						<ComboBox x:Name="BeginMonth_ComboBox" Grid.Column="1" Grid.Row="1" Width="Auto" Height="20"/>
+						<ComboBox x:Name="BeginDay_ComboBox" Grid.Column="2" Grid.Row="1" Width="Auto" Height="20"/>
+						<ComboBox x:Name="BeginHour_ComboBox" Grid.Column="3" Grid.Row="1" Width="Auto" Height="20"/>
+						<ComboBox x:Name="ChanelNum_ComboBox" Grid.Column="4" Grid.Row="1" Width="Auto" Height="20"/>
 
-						<ComboBox Grid.Column="0" Grid.Row="2" Width="Auto" Height="20"/>
-						<ComboBox Grid.Column="1" Grid.Row="2" Width="Auto" Height="20"/>
-						<ComboBox Grid.Column="2" Grid.Row="2" Width="Auto" Height="20"/>
-						<ComboBox Grid.Column="3" Grid.Row="2" Width="Auto" Height="20"/>
+						<ComboBox x:Name="EndYear_ComboBox" Grid.Column="0" Grid.Row="2" Width="Auto" Height="20"/>
+						<ComboBox x:Name="EndMonth_ComboBox" Grid.Column="1" Grid.Row="2" Width="Auto" Height="20"/>
+						<ComboBox x:Name="EndDay_ComboBox" Grid.Column="2" Grid.Row="2" Width="Auto" Height="20"/>
+						<ComboBox x:Name="EndHour_ComboBox" Grid.Column="3" Grid.Row="2" Width="Auto" Height="20"/>
                         <Button x:Name="OutputExcel_Button" Click="OutputExcel_Button_Click" Grid.Column="4" Grid.Row="2" Width="Auto" Height="20"/>
 
 						
