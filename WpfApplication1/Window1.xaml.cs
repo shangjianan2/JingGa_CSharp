@@ -23,12 +23,13 @@ namespace WpfApplication1
 
         public Window1()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         public Window1(MainWindow mainWindow_tt)
         {
             InitializeComponent();
+            this.Title = mainWindow_tt.Tab1_ComboBox.SelectedItem.ToString() + " 请输入密码";
             mainWindow = mainWindow_tt;
         }
 

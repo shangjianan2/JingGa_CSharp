@@ -58,6 +58,7 @@ namespace WpfApplication1
                     Init_ShiJianQuJian_ComboBox_CurrentTime();//每次切换到用户界面的时候更新时间
                 }
             }
+            this.Init_Tab1_ComboBox();
         }
 
         private void Tab1_Button_Click(object sender, RoutedEventArgs e)
