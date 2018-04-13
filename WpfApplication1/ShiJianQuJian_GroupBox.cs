@@ -47,6 +47,11 @@ namespace WpfApplication1
                 EndHour_ComboBox.Items.Add((i + 1).ToString());
             }
 
+            for(int i = 0; i < size_chanel; i++)
+            {
+                ChanelNum_ComboBox.Items.Add((i + 1).ToString());
+            }
+            ChanelNum_ComboBox.Items.Add("None");
 
         }
 
@@ -65,7 +70,9 @@ namespace WpfApplication1
                 sfd.Filter = "文件(*.xls)|*.xls";
                 if (sfd.ShowDialog() == true)
                 {
+                    OutputExcel_Button.Content = "保存中...";
                     output_excel(sfd.FileName);
+                    OutputExcel_Button.Content = "";
                 }
                 #endregion
             }
