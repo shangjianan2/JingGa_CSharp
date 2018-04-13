@@ -21,8 +21,21 @@ namespace WpfApplication1
         DateTime date_end = new DateTime();
         ListViewItem[] lvi_excel = new ListViewItem[] { };
 
+        public string[] CurrentTime()
+        {
+            string[] output_str = null;
+            string CurrentTime_YMDHMS = System.DateTime.Now.ToLocalTime().ToString();
+            output_str = CurrentTime_YMDHMS.Split(':');
+            output_str = output_str[0].Split('/', ' ');
+
+
+            return output_str;
+        }
+
         public void Init_ShiJianQuJian_GroupBox()
         {
+            string[] time_str_array = null;
+
             BeginYear_ComboBox.Items.Add("2017");
             BeginYear_ComboBox.Items.Add("2018");
 
@@ -53,6 +66,19 @@ namespace WpfApplication1
             }
             ChanelNum_ComboBox.Items.Add("None");
 
+            //输入开机时间
+            time_str_array = CurrentTime();
+            BeginYear_ComboBox.Text = time_str_array[0];
+            EndYear_ComboBox.Text = time_str_array[0];
+
+            BeginMonth_ComboBox.Text = time_str_array[1];
+            EndMonth_ComboBox.Text = time_str_array[1];
+
+            BeginDay_ComboBox.Text = time_str_array[2];
+            EndDay_ComboBox.Text = time_str_array[2];
+
+            BeginHour_ComboBox.Text = time_str_array[3];
+            EndHour_ComboBox.Text = time_str_array[3];
         }
 
         private void OutputExcel_Button_Click(object sender, EventArgs e)
@@ -68,9 +94,9 @@ namespace WpfApplication1
                 Microsoft.Win32.SaveFileDialog sfd = new Microsoft.Win32.SaveFileDialog();
                 sfd.DefaultExt = "xls";
                 sfd.Filter = "文件(*.xls)|*.xls";
+                OutputExcel_Button.Content = "保存中...";
                 if (sfd.ShowDialog() == true)
-                {
-                    OutputExcel_Button.Content = "保存中...";
+                {                    
                     output_excel(sfd.FileName);
                     OutputExcel_Button.Content = "";
                 }
