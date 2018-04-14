@@ -92,11 +92,23 @@ namespace WpfApplication1
         {
             try
             {
-                img_Tab6.Source = new BitmapImage(new Uri(@"E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\bin\Debug\timg2.jpg", UriKind.Absolute));
+                //img_Tab6.Source = new BitmapImage(new Uri(@"E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\bin\Debug\timg2.jpg", UriKind.Absolute));
+                #region
+                Microsoft.Win32.OpenFileDialog sfd = new Microsoft.Win32.OpenFileDialog();
+                sfd.DefaultExt = "jpg";
+                sfd.Filter = "地图(*.jpg)|*.jpg";
+                if (sfd.ShowDialog() == true)
+                {
+                    //output_excel(sfd.FileName);
+                    //OutputExcel_Button.Content = "";
+                    //img_Tab6.Source = new BitmapImage(new Uri(@"E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\bin\Debug\timg2.jpg", UriKind.Absolute));
+                    img_Tab6.Source = new BitmapImage(new Uri(sfd.FileName, UriKind.Absolute));
+                }
+                #endregion
             }
             catch
             {
-                img_Tab6.Source = new BitmapImage(new Uri(@"E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\bin\Debug\timg2.jpg", UriKind.Absolute));
+                MessageBox.Show("Tab6_DaoRuDiTu_Button_Click函数报错", "你敢信？");
             }
         }
     }
