@@ -92,8 +92,9 @@ namespace WpfApplication1
         {
             try
             {
-                //img_Tab6.Source = new BitmapImage(new Uri(@"E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\bin\Debug\timg2.jpg", UriKind.Absolute));
-                Point point = rectangle1_Tab6.TranslatePoint(new Point(150,200), Tab6_Canvas);
+                //Point point = rectangle1_Tab6.TranslatePoint(new Point(150,200), Tab6_Canvas);//获取点坐标
+                Canvas.SetLeft(rectangle1_Tab6, 500);
+                Canvas.SetTop(rectangle1_Tab6, 500);
                 #region
                 Microsoft.Win32.OpenFileDialog sfd = new Microsoft.Win32.OpenFileDialog();
                 sfd.DefaultExt = "jpg";
