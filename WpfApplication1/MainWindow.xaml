@@ -242,7 +242,7 @@
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="50"/>
 					</Grid.RowDefinitions>
-					<Canvas Grid.RowSpan="3">
+					<Canvas x:Name="Tab6_Canvas" Grid.RowSpan="3">
                         <Image x:Name="img_Tab6" Source="E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\timg.jpg"    
 							MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
 							MouseMove="img_MouseMove_Tab6"
