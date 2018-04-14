@@ -87,5 +87,17 @@ namespace WpfApplication1
             tabcontrol.SelectedIndex = 1;
             Init_Tab2_ComboBox();
         }
+
+        private void Tab6_DaoRuDiTu_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                img_Tab6.Source = new BitmapImage(new Uri(@"E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\bin\Debug\timg2.jpg", UriKind.Absolute));
+            }
+            catch
+            {
+                img_Tab6.Source = new BitmapImage(new Uri(@"E:\biancheng\mysql\0410\WpfApplication1\WpfApplication1\bin\Debug\timg2.jpg", UriKind.Absolute));
+            }
+        }
     }
 }
