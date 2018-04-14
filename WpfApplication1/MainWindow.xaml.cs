@@ -44,6 +44,9 @@ namespace WpfApplication1
             Init_Tab3_CurrentStatus_ListView(ref test5_Mem_array, Tab3_CurrentStatus_ListView);
             Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
             Init_ShiJianQuJian_GroupBox();
+            Init_translateTransform_Array();
+            Init_scaleTransform_Array();
+            Init_rectangle_Array();
 
             //注册事件
             mysql_Thread.rev_New2 += new recNewMessage2(rec2_NewMessage_Form1);
