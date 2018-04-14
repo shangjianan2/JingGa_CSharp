@@ -337,8 +337,8 @@ namespace WpfApplication1
             try
             {
                 //Point point = rectangle1_Tab6.TranslatePoint(new Point(150,200), Tab6_Canvas);//获取点坐标
-                Canvas.SetLeft(rectangle2_Tab6, 500);//测试使用，无实际意义
-                Canvas.SetTop(rectangle2_Tab6, 500);//测试使用，无实际意义
+                //Canvas.SetLeft(rectangle2_Tab6, 500);//测试使用，无实际意义
+                //Canvas.SetTop(rectangle2_Tab6, 500);//测试使用，无实际意义
                 #region
                 Microsoft.Win32.OpenFileDialog sfd = new Microsoft.Win32.OpenFileDialog();
                 sfd.DefaultExt = "txt";
@@ -346,8 +346,19 @@ namespace WpfApplication1
                 if (sfd.ShowDialog() == true)
                 {
                     System.IO.StreamReader rd = System.IO.File.OpenText(sfd.FileName);
-                    string s = rd.ReadLine();
-                    string[] ss = s.Split(' ');
+                    string s = rd.ReadToEnd();
+                    string[] ss = s.Split(' ', '\n', '\r');
+                    if(ss.Length != size_chanel * 4 + 3)
+                    {
+                        MessageBox.Show("文件格式错误", "提示");
+                        return;
+                    }
+
+                    for (int i = 0; i < (size_chanel * 4); i += 4)
+                    {
+                        change_XY_rectangle(rectangle_Array[Convert.ToInt16(ss[i]) - 1], Convert.ToInt16(ss[i + 1]), Convert.ToInt16(ss[i + 2]));
+                    }
+                    img_Tab6.Source = new BitmapImage(new Uri(ss[size_chanel * 4]));
                 }
                 #endregion
             }
@@ -355,6 +366,12 @@ namespace WpfApplication1
             {
                 MessageBox.Show("Tab6_DaoRuDiTu_Button_Click函数报错", "你敢信？");
             }
+        }
+
+        public void change_XY_rectangle(Rectangle rectangle_tt, double x, double y)
+        {
+            Canvas.SetLeft(rectangle_tt, x);
+            Canvas.SetTop(rectangle_tt, y);
         }
     }
 }

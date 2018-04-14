@@ -385,7 +385,7 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle15_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="150" Canvas.Top="150">
+                        <Rectangle x:Name="rectangle15_Tab6" Fill="Green" Height="10" Width="10" Canvas.Left="150" Canvas.Top="150">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr15_Tab6"/>
