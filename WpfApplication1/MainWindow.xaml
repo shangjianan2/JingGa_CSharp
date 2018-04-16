@@ -839,6 +839,8 @@
 					<Rectangle Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="4" Fill="SlateGray"/>
 					<Button x:Name="Tab6_Back_Button" Click="Tab6_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5"/>
                     <Button x:Name="DaoRuDiTu_Button" Click="Tab6_DaoRuDiTu_Button_Click" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Height="50" Width="100"/>
+                    <Button x:Name="DaoRuTuPian_Button" Click="Tab6_DaoRuTuPian_Button_Click" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Height="50" Width="100"/>
+                    <Button x:Name="DaoChuDiTu_Button" Click="Tab6_DaoChuDiTu_Button_Click" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Height="50" Width="100"/>
                 </Grid>
 			</TabItem>
 			<TabItem x:Name="Tab7" Height="0">
