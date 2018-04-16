@@ -35,8 +35,7 @@ namespace WpfApplication1
         Point previousMousePoint_Tab6 = new Point(0, 0);
 
         public UDP_Communication mysql_Thread = new UDP_Communication(new byte[4] { 10, 137, 8, 15 }, 2333);
-
-        //AsyncCallback callBack = new AsyncCallback(ProcessDnsInformation);
+        
 
         public MainWindow()
         {
@@ -61,28 +60,28 @@ namespace WpfApplication1
         {
             string temp_str = "ep=J4JFAJUGYS3GGF7Z&pw=123456";
             byte[] buff = System.Text.Encoding.ASCII.GetBytes(temp_str);
-
-
+            
             byte[] array_byte = new byte[4] { 115, 29, 240, 46 };//设定远程ip地址
             IPAddress ip = new IPAddress(array_byte);
             IPEndPoint lep = new IPEndPoint(ip, 6000);
-
-            //mysql_Thread.newsock.BeginSendTo(buff, 0, buff.Length, 0, lep, new AsyncCallback(Async_Send_Receive.SendTo_Callback), mysql_Thread.newsock);
+            
             mysql_Thread.newsock.Connect(lep);
             mysql_Thread.newsock.Send(buff);
         }
-
-        // The following method is called when each asynchronous operation completes.
-        //static void ProcessDnsInformation(IAsyncResult result)
-        //{
-            
-        //}
 
         #region//rec2_NewMessage_Form1函数是rec_NewMessage_Form1函数的新的实现，可以返回源地址和源端口
         public void rec2_NewMessage_Form1(byte[] message, ref EndPoint endPoint_tt)
         {
             //if (message.Length != 14)//数据的有效性还需要检验，但是暂时没有想到靠谱的方法
             //    return;
+            string temp_str = System.Text.Encoding.ASCII.GetString(message);
+            //if (temp_str == "[iotxx:ok]" || temp_str == "[iotxx:update]")//[iotxx:ok]
+            if (temp_str.Contains("[iotxx:"))
+            {
+                System.Diagnostics.Debug.WriteLine("[iotxx:ok]");
+                return;
+            }
+
             //显示源地址和源端口
             System.Diagnostics.Debug.WriteLine(endPoint_tt.ToString());
 
