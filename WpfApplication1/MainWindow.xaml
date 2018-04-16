@@ -273,7 +273,12 @@
 							</Rectangle.RenderTransform>
 						</Rectangle>
 
-                        <Rectangle x:Name="rectangle2_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="20" Canvas.Top="20">
+                        <Rectangle x:Name="rectangle2_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="20" Canvas.Top="20">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr2_Tab6"/>
@@ -282,7 +287,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle3_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="30" Canvas.Top="30">
+                        <Rectangle x:Name="rectangle3_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="30" Canvas.Top="30">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr3_Tab6"/>
@@ -290,8 +300,13 @@
                                 </TransformGroup>
                             </Rectangle.RenderTransform>
                         </Rectangle>
-                        
-                        <Rectangle x:Name="rectangle4_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="40" Canvas.Top="40">
+
+                        <Rectangle x:Name="rectangle4_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="40" Canvas.Top="40">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr4_Tab6"/>
@@ -300,7 +315,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle5_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="50" Canvas.Top="50">
+                        <Rectangle x:Name="rectangle5_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="50" Canvas.Top="50">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr5_Tab6"/>
@@ -309,7 +329,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle6_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="60" Canvas.Top="60">
+                        <Rectangle x:Name="rectangle6_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="60" Canvas.Top="60">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr6_Tab6"/>
@@ -318,7 +343,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle7_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="70" Canvas.Top="70">
+                        <Rectangle x:Name="rectangle7_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="70" Canvas.Top="70">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr7_Tab6"/>
@@ -327,7 +357,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle8_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="80" Canvas.Top="80">
+                        <Rectangle x:Name="rectangle8_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="80" Canvas.Top="80">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr8_Tab6"/>
@@ -336,7 +371,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle9_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="90" Canvas.Top="90">
+                        <Rectangle x:Name="rectangle9_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="90" Canvas.Top="90">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr9_Tab6"/>
@@ -345,7 +385,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle10_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="100" Canvas.Top="100">
+                        <Rectangle x:Name="rectangle10_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="100" Canvas.Top="100">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr10_Tab6"/>
@@ -354,7 +399,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle11_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="110" Canvas.Top="110">
+                        <Rectangle x:Name="rectangle11_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="110" Canvas.Top="110">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr11_Tab6" />
@@ -363,7 +413,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle12_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="120" Canvas.Top="120">
+                        <Rectangle x:Name="rectangle12_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="120" Canvas.Top="120">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr12_Tab6"/>
@@ -372,7 +427,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle13_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="130" Canvas.Top="130">
+                        <Rectangle x:Name="rectangle13_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="130" Canvas.Top="130">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr13_Tab6"/>
@@ -381,7 +441,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle14_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="140" Canvas.Top="140">
+                        <Rectangle x:Name="rectangle14_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="140" Canvas.Top="140">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr14_Tab6"/>
@@ -390,7 +455,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle15_Tab6" Fill="Green" Height="10" Width="10" Canvas.Left="150" Canvas.Top="150">
+                        <Rectangle x:Name="rectangle15_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Green" Height="10" Width="10" Canvas.Left="150" Canvas.Top="150">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr15_Tab6"/>
@@ -399,7 +469,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle16_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="160" Canvas.Top="160">
+                        <Rectangle x:Name="rectangle16_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="160" Canvas.Top="160">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr16_Tab6"/>
@@ -408,7 +483,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle17_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="170" Canvas.Top="170">
+                        <Rectangle x:Name="rectangle17_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="170" Canvas.Top="170">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr17_Tab6"/>
@@ -417,7 +497,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle18_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="180" Canvas.Top="180">
+                        <Rectangle x:Name="rectangle18_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="180" Canvas.Top="180">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr18_Tab6"/>
@@ -426,7 +511,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle19_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="190" Canvas.Top="190">
+                        <Rectangle x:Name="rectangle19_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="190" Canvas.Top="190">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr19_Tab6"/>
@@ -435,7 +525,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle20_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="200" Canvas.Top="200">
+                        <Rectangle x:Name="rectangle20_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="200" Canvas.Top="200">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr20_Tab6"/>
@@ -444,7 +539,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle21_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="210" Canvas.Top="210">
+                        <Rectangle x:Name="rectangle21_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="210" Canvas.Top="210">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr21_Tab6" />
@@ -453,7 +553,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle22_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="220" Canvas.Top="220">
+                        <Rectangle x:Name="rectangle22_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="220" Canvas.Top="220">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr22_Tab6"/>
@@ -462,7 +567,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle23_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="230" Canvas.Top="230">
+                        <Rectangle x:Name="rectangle23_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="230" Canvas.Top="230">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr23_Tab6"/>
@@ -471,7 +581,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle24_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="240" Canvas.Top="240">
+                        <Rectangle x:Name="rectangle24_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="240" Canvas.Top="240">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr24_Tab6"/>
@@ -480,7 +595,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle25_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="250" Canvas.Top="250">
+                        <Rectangle x:Name="rectangle25_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="250" Canvas.Top="250">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr25_Tab6"/>
@@ -489,7 +609,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle26_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="260" Canvas.Top="260">
+                        <Rectangle x:Name="rectangle26_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="260" Canvas.Top="260">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr26_Tab6"/>
@@ -498,7 +623,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle27_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="270" Canvas.Top="270">
+                        <Rectangle x:Name="rectangle27_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="270" Canvas.Top="270">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr27_Tab6"/>
@@ -507,7 +637,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle28_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="280" Canvas.Top="280">
+                        <Rectangle x:Name="rectangle28_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="280" Canvas.Top="280">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr28_Tab6"/>
@@ -516,7 +651,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle29_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="290" Canvas.Top="290">
+                        <Rectangle x:Name="rectangle29_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="290" Canvas.Top="290">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr29_Tab6"/>
@@ -525,7 +665,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle30_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="300" Canvas.Top="300">
+                        <Rectangle x:Name="rectangle30_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="300" Canvas.Top="300">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr30_Tab6"/>
@@ -534,7 +679,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle31_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="310" Canvas.Top="310">
+                        <Rectangle x:Name="rectangle31_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="310" Canvas.Top="310">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr31_Tab6" />
@@ -543,7 +693,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle32_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="320" Canvas.Top="320">
+                        <Rectangle x:Name="rectangle32_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="320" Canvas.Top="320">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr32_Tab6"/>
@@ -552,7 +707,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle33_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="330" Canvas.Top="330">
+                        <Rectangle x:Name="rectangle33_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="330" Canvas.Top="330">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr33_Tab6"/>
@@ -561,7 +721,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle34_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="340" Canvas.Top="340">
+                        <Rectangle x:Name="rectangle34_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="340" Canvas.Top="340">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr34_Tab6"/>
@@ -570,7 +735,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle35_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="350" Canvas.Top="350">
+                        <Rectangle x:Name="rectangle35_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="350" Canvas.Top="350">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr35_Tab6"/>
@@ -579,7 +749,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle36_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="360" Canvas.Top="360">
+                        <Rectangle x:Name="rectangle36_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="360" Canvas.Top="360">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr36_Tab6"/>
@@ -588,7 +763,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle37_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="370" Canvas.Top="370">
+                        <Rectangle x:Name="rectangle37_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="370" Canvas.Top="370">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr37_Tab6"/>
@@ -597,7 +777,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle38_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="380" Canvas.Top="380">
+                        <Rectangle x:Name="rectangle38_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="380" Canvas.Top="380">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr38_Tab6"/>
@@ -606,7 +791,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle39_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="390" Canvas.Top="390">
+                        <Rectangle x:Name="rectangle39_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="390" Canvas.Top="390">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr39_Tab6"/>
@@ -615,7 +805,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle40_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="400" Canvas.Top="400">
+                        <Rectangle x:Name="rectangle40_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="400" Canvas.Top="400">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr40_Tab6"/>
@@ -624,7 +819,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle41_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="410" Canvas.Top="410">
+                        <Rectangle x:Name="rectangle41_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="410" Canvas.Top="410">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr41_Tab6" />
@@ -633,7 +833,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle42_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="420" Canvas.Top="420">
+                        <Rectangle x:Name="rectangle42_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="420" Canvas.Top="420">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr42_Tab6"/>
@@ -642,7 +847,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle43_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="430" Canvas.Top="430">
+                        <Rectangle x:Name="rectangle43_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="430" Canvas.Top="430">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr43_Tab6"/>
@@ -651,7 +861,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle44_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="440" Canvas.Top="440">
+                        <Rectangle x:Name="rectangle44_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="440" Canvas.Top="440">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr44_Tab6"/>
@@ -660,7 +875,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle45_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="450" Canvas.Top="450">
+                        <Rectangle x:Name="rectangle45_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="450" Canvas.Top="450">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr45_Tab6"/>
@@ -669,7 +889,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle46_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="460" Canvas.Top="460">
+                        <Rectangle x:Name="rectangle46_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="460" Canvas.Top="460">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr46_Tab6"/>
@@ -678,7 +903,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle47_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="470" Canvas.Top="470">
+                        <Rectangle x:Name="rectangle47_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="470" Canvas.Top="470">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr47_Tab6"/>
@@ -687,7 +917,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle48_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="480" Canvas.Top="480">
+                        <Rectangle x:Name="rectangle48_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="480" Canvas.Top="480">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr48_Tab6"/>
@@ -696,7 +931,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle49_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="490" Canvas.Top="490">
+                        <Rectangle x:Name="rectangle49_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="490" Canvas.Top="490">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr49_Tab6"/>
@@ -705,7 +945,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle50_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="500" Canvas.Top="500">
+                        <Rectangle x:Name="rectangle50_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="500" Canvas.Top="500">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr50_Tab6"/>
@@ -714,7 +959,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle51_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="510" Canvas.Top="510">
+                        <Rectangle x:Name="rectangle51_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="510" Canvas.Top="510">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr51_Tab6" />
@@ -723,7 +973,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle52_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="520" Canvas.Top="520">
+                        <Rectangle x:Name="rectangle52_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="520" Canvas.Top="520">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr52_Tab6"/>
@@ -732,7 +987,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle53_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="530" Canvas.Top="530">
+                        <Rectangle x:Name="rectangle53_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="530" Canvas.Top="530">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr53_Tab6"/>
@@ -741,7 +1001,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle54_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="540" Canvas.Top="540">
+                        <Rectangle x:Name="rectangle54_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="540" Canvas.Top="540">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr54_Tab6"/>
@@ -750,7 +1015,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle55_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="550" Canvas.Top="550">
+                        <Rectangle x:Name="rectangle55_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="550" Canvas.Top="550">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr55_Tab6"/>
@@ -759,7 +1029,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle56_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="560" Canvas.Top="560">
+                        <Rectangle x:Name="rectangle56_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="560" Canvas.Top="560">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr56_Tab6"/>
@@ -768,7 +1043,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle57_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="570" Canvas.Top="570">
+                        <Rectangle x:Name="rectangle57_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="570" Canvas.Top="570">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr57_Tab6"/>
@@ -777,7 +1057,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle58_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="580" Canvas.Top="580">
+                        <Rectangle x:Name="rectangle58_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="580" Canvas.Top="580">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr58_Tab6"/>
@@ -786,7 +1071,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle59_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="590" Canvas.Top="590">
+                        <Rectangle x:Name="rectangle59_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="590" Canvas.Top="590">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr59_Tab6"/>
@@ -795,7 +1085,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle60_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="600" Canvas.Top="600">
+                        <Rectangle x:Name="rectangle60_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="600" Canvas.Top="600">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr60_Tab6"/>
@@ -804,7 +1099,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle61_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="610" Canvas.Top="610">
+                        <Rectangle x:Name="rectangle61_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="610" Canvas.Top="610">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr61_Tab6" />
@@ -813,7 +1113,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle62_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="620" Canvas.Top="620">
+                        <Rectangle x:Name="rectangle62_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="620" Canvas.Top="620">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr62_Tab6"/>
@@ -822,7 +1127,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle63_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="630" Canvas.Top="630">
+                        <Rectangle x:Name="rectangle63_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="630" Canvas.Top="630">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr63_Tab6"/>
@@ -831,7 +1141,12 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
 
-                        <Rectangle x:Name="rectangle64_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="640" Canvas.Top="640">
+                        <Rectangle x:Name="rectangle64_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Red" Height="10" Width="10" Canvas.Left="640" Canvas.Top="640">
                             <Rectangle.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform x:Name="sfr64_Tab6"/>
