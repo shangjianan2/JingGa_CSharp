@@ -264,7 +264,7 @@
 							MouseMove="img_MouseMove_Tab6"
 							MouseUp="img_MouseUp_Tab6"
 							MouseLeave="img_MouseLeave_Tab6" 
-                            Fill="Blue" Height="10" Width="10" Canvas.Left="10" Canvas.Top="10">
+                            Fill="Blue" Height="20" Width="20" Canvas.Left="10" Canvas.Top="10">
 							<Rectangle.RenderTransform>
 								<TransformGroup>
                                     <ScaleTransform x:Name="sfr1_Tab6" />

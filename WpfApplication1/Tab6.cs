@@ -259,10 +259,12 @@ namespace WpfApplication1
             if (sender.ToString() == "System.Windows.Shapes.Rectangle")
             {
                 previousMousePoint_Tab6 = e.GetPosition((System.Windows.Shapes.Rectangle)sender);
+                System.Diagnostics.Debug.WriteLine("Left {0} Top {1} tlt_x {2} tlt_y {3}", Canvas.GetLeft((System.Windows.Shapes.Rectangle)sender), Canvas.GetTop((System.Windows.Shapes.Rectangle)sender), tlt1_Tab6.X, tlt1_Tab6.Y);
             }
             else
             {
                 previousMousePoint_Tab6 = e.GetPosition(img_Tab6);
+                System.Diagnostics.Debug.WriteLine("tlt_x {0} tlt_y {1}", tlt_Tab6.X, tlt_Tab6.Y);
             }
         }
 
@@ -462,31 +464,10 @@ namespace WpfApplication1
         {
             try
             {
-                //Point point = rectangle1_Tab6.TranslatePoint(new Point(150,200), Tab6_Canvas);//获取点坐标
-                //Canvas.SetLeft(rectangle2_Tab6, 500);//测试使用，无实际意义
-                //Canvas.SetTop(rectangle2_Tab6, 500);//测试使用，无实际意义
-                #region
-                Microsoft.Win32.OpenFileDialog sfd = new Microsoft.Win32.OpenFileDialog();
-                sfd.DefaultExt = "txt";
-                sfd.Filter = "文本文件(*.txt)|*.txt";
-                if (sfd.ShowDialog() == true)
-                {
-                    System.IO.StreamReader rd = System.IO.File.OpenText(sfd.FileName);
-                    string s = rd.ReadToEnd();
-                    string[] ss = s.Split(' ', '\n', '\r');
-                    if (ss.Length != size_chanel * 4 + 3)
-                    {
-                        MessageBox.Show("文件格式错误", "提示");
-                        return;
-                    }
-
-                    for (int i = 0; i < (size_chanel * 4); i += 4)
-                    {
-                        change_XY_rectangle(rectangle_Array[Convert.ToInt16(ss[i]) - 1], Convert.ToInt16(ss[i + 1]), Convert.ToInt16(ss[i + 2]));
-                    }
-                    img_Tab6.Source = new BitmapImage(new Uri(ss[size_chanel * 4]));
-                }
-                #endregion
+                Canvas.SetLeft(rectangle1_Tab6, Canvas.GetLeft(rectangle1_Tab6) + tlt1_Tab6.X - tlt_Tab6.X);
+                Canvas.SetTop(rectangle1_Tab6, Canvas.GetTop(rectangle1_Tab6) + tlt1_Tab6.Y - tlt_Tab6.Y);
+                tlt1_Tab6.X = tlt_Tab6.X;
+                tlt1_Tab6.Y = tlt_Tab6.Y;
             }
             catch
             {
