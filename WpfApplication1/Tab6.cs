@@ -254,7 +254,16 @@ namespace WpfApplication1
         private void img_MouseDown_Tab6(object sender, MouseButtonEventArgs e)
         {
             isMouseLeftButtonDown_Tab6 = true;
-            previousMousePoint_Tab6 = e.GetPosition(img_Tab6);
+            
+
+            if (sender.ToString() == "System.Windows.Shapes.Rectangle")
+            {
+                previousMousePoint_Tab6 = e.GetPosition((System.Windows.Shapes.Rectangle)sender);
+            }
+            else
+            {
+                previousMousePoint_Tab6 = e.GetPosition(img_Tab6);
+            }
         }
 
         private void img_MouseUp_Tab6(object sender, MouseButtonEventArgs e)
@@ -269,19 +278,70 @@ namespace WpfApplication1
 
         private void img_MouseMove_Tab6(object sender, MouseEventArgs e)
         {
+            //System.Diagnostics.Debug.WriteLine("sender {0}", sender);
+
             if (isMouseLeftButtonDown_Tab6 == true)
             {
-                Point position_Tab6 = e.GetPosition(img_Tab6);
-                tlt_Tab6.X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * sfr_Tab6.ScaleX;
-                tlt_Tab6.Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * sfr_Tab6.ScaleY;
-
-                //tlt2_Tab6.X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * sfr_Tab6.ScaleX;
-                //tlt2_Tab6.Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * sfr_Tab6.ScaleY;
-
-                for(int i = 0; i < size_chanel; i++)//size_chanel
+                if(sender.ToString() == "System.Windows.Shapes.Rectangle")
                 {
-                    translateTransform_Array[i].X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * scaleTransform_Array[i].ScaleX;
-                    translateTransform_Array[i].Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * scaleTransform_Array[i].ScaleY;
+                    System.Windows.Shapes.Rectangle rectangle_temp = (System.Windows.Shapes.Rectangle)sender;
+
+                    Point position_Tab6 = e.GetPosition(rectangle_temp);
+
+                    //double left_temp = Canvas.GetLeft(rectangle_temp);
+                    //double top_temp = Canvas.GetTop(rectangle_temp);
+
+                    //double change_left = (position_Tab6.X - this.previousMousePoint_Tab6.X) * scaleTransform_Array[0].ScaleX;
+                    //double change_top = (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * scaleTransform_Array[0].ScaleY;
+                    ////rectangle_temp.RenderTransform[]
+
+                    //Canvas.SetLeft(rectangle_temp, (left_temp - change_left));
+                    //Canvas.SetTop(rectangle_temp, (top_temp - change_top));
+
+                    //double left_temp2 = Canvas.GetLeft(rectangle_temp);
+                    //double top_temp2 = Canvas.GetTop(rectangle_temp);
+
+                    
+                    for (int i = 0; i < size_chanel; i++)
+                    {
+                        if (rectangle_Array[i].Name == rectangle_temp.Name)
+                        {
+                            position_Tab6 = e.GetPosition(rectangle_Array[i]);
+
+                            translateTransform_Array[i].X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * scaleTransform_Array[i].ScaleX;
+                            translateTransform_Array[i].Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * scaleTransform_Array[i].ScaleY;
+                            break;
+                        }
+                    }
+
+
+
+                    //Point position_Tab6 = e.GetPosition(img_Tab6);
+                    //tlt_Tab6.X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * sfr_Tab6.ScaleX;
+                    //tlt_Tab6.Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * sfr_Tab6.ScaleY;
+
+
+
+                    //for (int i = 0; i < size_chanel; i++)//size_chanel
+                    //{
+                    //    translateTransform_Array[i].X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * scaleTransform_Array[i].ScaleX;
+                    //    translateTransform_Array[i].Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * scaleTransform_Array[i].ScaleY;
+                    //}
+                }
+                else
+                {
+                    Point position_Tab6 = e.GetPosition(img_Tab6);
+                    tlt_Tab6.X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * sfr_Tab6.ScaleX;
+                    tlt_Tab6.Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * sfr_Tab6.ScaleY;
+
+                    //tlt2_Tab6.X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * sfr_Tab6.ScaleX;
+                    //tlt2_Tab6.Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * sfr_Tab6.ScaleY;
+
+                    for (int i = 0; i < size_chanel; i++)//size_chanel
+                    {
+                        translateTransform_Array[i].X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * scaleTransform_Array[i].ScaleX;
+                        translateTransform_Array[i].Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * scaleTransform_Array[i].ScaleY;
+                    }
                 }
 
             }
@@ -325,13 +385,9 @@ namespace WpfApplication1
         }
         #endregion
 
-        //地图维护
-        private void Tab6_Back_Button_Click(object sender, RoutedEventArgs e)
-        {
-            tabcontrol.SelectedIndex = 1;
-            Init_Tab2_ComboBox();
-        }
+        
 
+        #region//导入地图的配置文件
         private void Tab6_DaoRuDiTu_Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -373,6 +429,7 @@ namespace WpfApplication1
             Canvas.SetLeft(rectangle_tt, x);
             Canvas.SetTop(rectangle_tt, y);
         }
+        #endregion
 
 
         #region//导入地图的图片
@@ -389,20 +446,6 @@ namespace WpfApplication1
                 sfd.Filter = "图片(*.jpg)|*.jpg";
                 if (sfd.ShowDialog() == true)
                 {
-                    //System.IO.StreamReader rd = System.IO.File.OpenText(sfd.FileName);
-                    //string s = rd.ReadToEnd();
-                    //string[] ss = s.Split(' ', '\n', '\r');
-                    //if (ss.Length != size_chanel * 4 + 3)
-                    //{
-                    //    MessageBox.Show("文件格式错误", "提示");
-                    //    return;
-                    //}
-
-                    //for (int i = 0; i < (size_chanel * 4); i += 4)
-                    //{
-                    //    change_XY_rectangle(rectangle_Array[Convert.ToInt16(ss[i]) - 1], Convert.ToInt16(ss[i + 1]), Convert.ToInt16(ss[i + 2]));
-                    //}
-                    //img_Tab6.Source = new BitmapImage(new Uri(ss[size_chanel * 4]));
                     img_Tab6.Source = new BitmapImage(new Uri(sfd.FileName));
                 }
                 #endregion
@@ -451,5 +494,13 @@ namespace WpfApplication1
             }
         }
         #endregion
+
+
+        //返回按键
+        private void Tab6_Back_Button_Click(object sender, RoutedEventArgs e)
+        {
+            tabcontrol.SelectedIndex = 1;
+            Init_Tab2_ComboBox();
+        }
     }
 }

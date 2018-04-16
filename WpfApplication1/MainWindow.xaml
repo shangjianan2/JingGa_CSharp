@@ -249,7 +249,7 @@
 							MouseUp="img_MouseUp_Tab6"
 							MouseLeave="img_MouseLeave_Tab6"
 							Stretch="Uniform"  
-							RenderOptions.BitmapScalingMode="NearestNeighbor" Canvas.Top="-100" Canvas.Left="-100">
+							RenderOptions.BitmapScalingMode="NearestNeighbor" Canvas.Top="0" Canvas.Left="0">
 
 							<Image.RenderTransform>
 								<TransformGroup>
@@ -259,7 +259,12 @@
 							</Image.RenderTransform>
 						</Image>
 
-						<Rectangle x:Name="rectangle1_Tab6" Fill="Red" Height="10" Width="10" Canvas.Left="10" Canvas.Top="10">
+                        <Rectangle x:Name="rectangle1_Tab6" 
+                            MouseDown="img_MouseDown_Tab6" MouseWheel="img_MouseWheel_Tab6"
+							MouseMove="img_MouseMove_Tab6"
+							MouseUp="img_MouseUp_Tab6"
+							MouseLeave="img_MouseLeave_Tab6" 
+                            Fill="Blue" Height="10" Width="10" Canvas.Left="10" Canvas.Top="10">
 							<Rectangle.RenderTransform>
 								<TransformGroup>
                                     <ScaleTransform x:Name="sfr1_Tab6" />
