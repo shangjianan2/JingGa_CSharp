@@ -76,24 +76,6 @@ namespace WpfApplication1
         {
             try
             {
-                //int temp_index = Tab4_User_ListView.SelectedItems[0].Index;
-                //string DeletedUser = ExistYongHu_YongHuWeiHu_ListView.Items[temp_index].SubItems[0].Text;
-
-                //if (DeletedUser == "root")//不能删除root用户
-                //    return;
-
-                //MessageBoxButtons messButton = MessageBoxButtons.OKCancel;
-                //DialogResult dr = MessageBox.Show("确定要删除？", "用户删除", messButton);
-                //if (dr == DialogResult.OK)
-                //{
-                //    string command_str = "delete from users where name=\"" + DeletedUser + "\"";
-                //    MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, command_str, null);
-                //}
-                //else
-                //{
-                //    return;//既然没有做出改变，就不用进行Update_ExistYongHu_YongHuWeiHu_ListView和Init_Login_ComboBox
-                //}
-
                 string DeletedUser = test5_Mem_Tab4_array[Tab4_User_ListView.SelectedIndex].UserName;
 
                 if (DeletedUser == "root")//不能删除root用户
@@ -109,9 +91,7 @@ namespace WpfApplication1
                 {
                     return;
                 }
-
-                //System.Diagnostics.Debug.WriteLine("{0}", Tab4_User_ListView.SelectedIndex);
-                //test5_Mem_Tab4_array = new test5_mem_Tab4[size_chanel];
+                
                 test5_Mem_Tab4_array[CurrentLength_test5_Mem_Tab4_array] = null;//清除最后一项
                 Tab4_User_ListView.Items.Refresh();//添加这个就好使
                 
@@ -123,8 +103,6 @@ namespace WpfApplication1
             {
                 MessageBox.Show("请选择一个用户", "error");
             }
-            //Init_test5_Mem_Tab4_array(ref test5_Mem_Tab4_array);
-            //Init_Tab1_ComboBox();
         }
 
         //Tab用户维护
