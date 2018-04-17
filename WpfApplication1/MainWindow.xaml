@@ -5,11 +5,26 @@
         Title="NBIoT物联网管理系统" Height="700" Width="1000">
 	<Grid>
 		<TabControl x:Name="tabcontrol" HorizontalAlignment="Stretch" Height="Auto" Margin="-6,-10,-6,-6" VerticalAlignment="Stretch" Width="Auto">
-			<TabItem x:Name="Tab1" Height="0">
-				<ComboBox x:Name="Tab1_ComboBox" SelectionChanged="Tab1_ComboBox_SelectionChanged" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100"/>
-			</TabItem>
-			<TabItem x:Name="Tab2" Height="0">
-				<Grid>
+			<TabItem x:Name="Tab1" Height="0" Background="Black">
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                            <GradientStop Color="White" Offset="0.0" />
+                            <GradientStop Color="LightSkyBlue" Offset="1" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <ComboBox x:Name="Tab1_ComboBox" SelectionChanged="Tab1_ComboBox_SelectionChanged" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100"/>
+
+                </Grid>
+				</TabItem>
+            <TabItem x:Name="Tab2" Height="0">
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                            <GradientStop Color="White" Offset="0.0" />
+                            <GradientStop Color="LightSkyBlue" Offset="1" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*"/>
 						<ColumnDefinition Width="100"/>
