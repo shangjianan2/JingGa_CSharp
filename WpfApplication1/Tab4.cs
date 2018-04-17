@@ -24,7 +24,8 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public test5_mem_Tab4[] test5_Mem_Tab4_array = new test5_mem_Tab4[size_chanel];
+        public test5_mem_Tab4[] test5_Mem_Tab4_array = new test5_mem_Tab4[size_chanel];//这里用size_chanel代表可显示的最大用户量
+        public int CurrentLength_test5_Mem_Tab4_array = 0;
 
         public void Init_Tab4_CurrentStatus_ListView(ref test5_mem_Tab4[] test5_Mem_Tab4_array_tt, ListView listView_tt)
         {
@@ -37,6 +38,8 @@ namespace WpfApplication1
             string dataSet_temp_str = "select * from users";
             DataSet dataSet_temp = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, dataSet_temp_str, null);
             DataRowCollection temp_DataRow = dataSet_temp.Tables[0].Rows;//获取列
+
+            CurrentLength_test5_Mem_Tab4_array = temp_DataRow.Count;//把当前数据库中数据的数量赋值给CurrentLength_test5_Mem_Tab4_array
 
             for (int i = 0; i < temp_DataRow.Count; i++)//
             {
@@ -56,6 +59,7 @@ namespace WpfApplication1
             try
             {
                 MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, temp_str, null);
+                CurrentLength_test5_Mem_Tab4_array++;//如果运行到这里说明已经成功添加，所以将当前用户数量计数器的数值增加
             }
             catch
             {
@@ -90,17 +94,37 @@ namespace WpfApplication1
                 //    return;//既然没有做出改变，就不用进行Update_ExistYongHu_YongHuWeiHu_ListView和Init_Login_ComboBox
                 //}
 
-                System.Diagnostics.Debug.WriteLine("{0}", Tab4_User_ListView.SelectedIndex);
+                string DeletedUser = test5_Mem_Tab4_array[Tab4_User_ListView.SelectedIndex].UserName;
 
+                if (DeletedUser == "root")//不能删除root用户
+                    return;
 
+                if (System.Windows.MessageBox.Show("您确定要删除吗？", "提示：", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+                {
+                    string command_str = "delete from users where name=\"" + DeletedUser + "\"";
+                    MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, command_str, null);
+                    CurrentLength_test5_Mem_Tab4_array--;//如果运行到这里，说明成功从数据库中删除数据。所以将计数器减一
+                }
+                else
+                {
+                    return;
+                }
+
+                //System.Diagnostics.Debug.WriteLine("{0}", Tab4_User_ListView.SelectedIndex);
+                //test5_Mem_Tab4_array = new test5_mem_Tab4[size_chanel];
+                test5_Mem_Tab4_array[CurrentLength_test5_Mem_Tab4_array] = null;//清除最后一项
+                Tab4_User_ListView.Items.Refresh();//添加这个就好使
+                
+                Init_test5_Mem_Tab4_array(ref test5_Mem_Tab4_array);
+                Init_Tab1_ComboBox();
 
             }
             catch
             {
                 MessageBox.Show("请选择一个用户", "error");
             }
-            Init_test5_Mem_Tab4_array(ref test5_Mem_Tab4_array);
-            Init_Tab1_ComboBox();
+            //Init_test5_Mem_Tab4_array(ref test5_Mem_Tab4_array);
+            //Init_Tab1_ComboBox();
         }
 
         //Tab用户维护
