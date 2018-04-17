@@ -37,6 +37,8 @@ namespace WpfApplication1
         public UDP_Communication mysql_Thread = new UDP_Communication(new byte[4] { 192, 168, 1, 84 }, 2333);
 
         private System.Threading.Timer SendToIoT = null;
+
+        byte flag_Tab8 = 0;
         
 
         public MainWindow()
@@ -67,6 +69,8 @@ namespace WpfApplication1
             //Tab5界面初始化
             Init_Tab5_CurrentStatus_ListView(ref test5_Mem_Tab5_array, Tab5_JieDian_ListView);
             Init_test5_Mem_Tab5_array(ref test5_Mem_Tab5_array);
+
+            tabcontrol.SelectedIndex = 7;
         }
 
         public void SendToIoTCall(object state)
@@ -80,6 +84,25 @@ namespace WpfApplication1
 
             //mysql_Thread.newsock.Connect(lep);
             mysql_Thread.newsock.Send(buff);
+
+            if(flag_Tab8 >= 2)
+            {
+                
+            }
+            else if(flag_Tab8 < 1)
+            {
+                flag_Tab8++;
+            }
+            else
+            {
+                Action<bool> action_tt = (x) =>
+                {
+                    tabcontrol.SelectedIndex = 0;//开启登陆界面
+                };
+                this.Dispatcher.Invoke(action_tt, true);
+                
+                flag_Tab8++;
+            }
         }
 
         public void Init_NBIoT()

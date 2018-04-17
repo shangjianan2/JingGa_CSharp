@@ -1180,7 +1180,12 @@
 				
 			</TabItem>
 			<TabItem x:Name="Tab8" Height="0">
-				
+                <Viewbox Stretch="Fill">
+                    <Image x:Name="img_Tab8" Source="C:\Users\shang\Desktop\最终logo.PNG" 
+                            Stretch="Fill"  
+							RenderOptions.BitmapScalingMode="NearestNeighbor" Canvas.Top="-100" Canvas.Left="-100">
+                    </Image>
+                </Viewbox>
 			</TabItem>
 		</TabControl>
 	</Grid>
