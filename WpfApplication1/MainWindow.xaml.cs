@@ -60,7 +60,7 @@ namespace WpfApplication1
             mysql_Thread.recThread_Start();
 
             //添加定时器，因为长时间上位机不向下位机发送指令上位机与云平台会断线
-            SendToIoT = new System.Threading.Timer(new System.Threading.TimerCallback(SendToIoTCall), this, 5000, 5000);
+            SendToIoT = new System.Threading.Timer(new System.Threading.TimerCallback(SendToIoTCall), this, 3000, 3000);
 
             //为Tab4（用户维护界面）中的listview初始化
             Init_Tab4_CurrentStatus_ListView(ref test5_Mem_Tab4_array, Tab4_User_ListView);
