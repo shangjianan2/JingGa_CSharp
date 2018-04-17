@@ -64,6 +64,7 @@
     <Compile Include="Tab1.cs" />
     <Compile Include="Tab3.cs" />
     <Compile Include="Tab4.cs" />
+    <Compile Include="Tab5.cs" />
     <Compile Include="Tab6.cs" />
     <Compile Include="UDP_Thread.cs" />
     <Compile Include="Window1.xaml.cs">

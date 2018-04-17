@@ -63,6 +63,10 @@ namespace WpfApplication1
             //为Tab4（用户维护界面）中的listview初始化
             Init_Tab4_CurrentStatus_ListView(ref test5_Mem_Tab4_array, Tab4_User_ListView);
             Init_test5_Mem_Tab4_array(ref test5_Mem_Tab4_array);
+
+            //Tab5界面初始化
+            Init_Tab5_CurrentStatus_ListView(ref test5_Mem_Tab5_array, Tab5_JieDian_ListView);
+            Init_test5_Mem_Tab5_array(ref test5_Mem_Tab5_array);
         }
 
         public void SendToIoTCall(object state)
@@ -164,12 +168,7 @@ namespace WpfApplication1
 
         
 
-        //节点维护
-        private void Tab5_Back_Button_Click(object sender, RoutedEventArgs e)
-        {
-            tabcontrol.SelectedIndex = 1;
-            Init_Tab2_ComboBox();
-        }
+        
 
         
 
@@ -455,6 +454,92 @@ namespace WpfApplication1
                     password = value;
                 }
                 OnPropertyChanged("PassWord");
+            }
+        }
+
+        private void OnPropertyChanged(string strPropertyInfo)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(strPropertyInfo));
+            }
+        }
+    }
+
+    public class test5_mem_Tab5 : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private string id;
+        private string name;
+        private string bianma;
+        private string shuoming;
+
+        public string ID
+        {
+            get { return id; }
+            set
+            {
+                if (value == null)
+                {
+                    id = " ";
+                }
+                else
+                {
+                    id = value;
+                }
+                OnPropertyChanged("ID");
+            }
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                if (value == null)
+                {
+                    name = " ";
+                }
+                else
+                {
+                    name = value;
+                }
+                OnPropertyChanged("Name");
+            }
+        }
+
+        public string BianMa
+        {
+            get { return bianma; }
+            set
+            {
+                if (value == null)
+                {
+                    bianma = " ";
+                }
+                else
+                {
+                    bianma = value;
+                }
+                OnPropertyChanged("BianMa");
+            }
+        }
+
+        public string ShuoMing
+        {
+            get { return shuoming; }
+            set
+            {
+                if (value == null)
+                {
+                    shuoming = " ";
+                }
+                else
+                {
+                    shuoming = value;
+                }
+                OnPropertyChanged("ShuoMing");
             }
         }
 

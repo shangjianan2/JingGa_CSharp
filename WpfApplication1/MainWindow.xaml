@@ -214,19 +214,26 @@
 							<Label Content="编码" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 							<Label Content="说明" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-							<TextBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
-							<TextBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
-							<TextBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
-							<TextBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
+                            <TextBox x:Name="Tab5_AddID_TextBox" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
+                            <TextBox x:Name="Tab5_AddName_TextBox" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
+                            <TextBox x:Name="Tab5_AddBianMa_TextBox" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
+                            <TextBox x:Name="Tab5_AddShuoMing_TextBox" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
 
-							<Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="25"/>
-							<Button Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="25"/>
+                            <Button Click="Tab5_AddUser_Button_Click" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="25"/>
+                            <Button Click="Tab5_DeleteUser_Button_Click" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="25"/>
 						</Grid>
 					</GroupBox>
 
-					<ListView Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Height="Auto" Width="Auto">
-						
-					</ListView>
+                    <ListView x:Name="Tab5_JieDian_ListView" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Height="Auto" Width="Auto">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" Width="70" DisplayMemberBinding="{Binding Path=ID}"/>
+                                <GridViewColumn Header="名称" Width="70" DisplayMemberBinding="{Binding Path=Name}"/>
+                                <GridViewColumn Header="编码" Width="70" DisplayMemberBinding="{Binding Path=BianMa}"/>
+                                <GridViewColumn Header="说明" Width="70" DisplayMemberBinding="{Binding Path=ShuoMing}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
 
                     <Button x:Name="Tab5_Back_Button" Click="Tab5_Back_Button_Click" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="90" Margin="0, 0, 5, 5"/>
 
