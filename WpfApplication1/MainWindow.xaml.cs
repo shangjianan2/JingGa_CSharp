@@ -35,6 +35,8 @@ namespace WpfApplication1
         Point previousMousePoint_Tab6 = new Point(0, 0);
 
         public UDP_Communication mysql_Thread = new UDP_Communication(new byte[4] { 192, 168, 1, 84 }, 2333);
+
+        private System.Threading.Timer SendToIoT = null;
         
 
         public MainWindow()
@@ -54,6 +56,22 @@ namespace WpfApplication1
             //注册事件
             mysql_Thread.rev_New2 += new recNewMessage2(rec2_NewMessage_Form1);
             mysql_Thread.recThread_Start();
+
+            //添加定时器，因为长时间上位机不向下位机发送指令上位机与云平台会断线
+            SendToIoT = new System.Threading.Timer(new System.Threading.TimerCallback(SendToIoTCall), this, 5000, 5000);
+        }
+
+        public void SendToIoTCall(object state)
+        {
+            string temp_str = "ep=J4JFAJUGYS3GGF7Z&pw=123456";
+            byte[] buff = System.Text.Encoding.ASCII.GetBytes(temp_str);
+
+            //byte[] array_byte = new byte[4] { 115, 29, 240, 46 };//设定远程ip地址
+            //IPAddress ip = new IPAddress(array_byte);
+            //IPEndPoint lep = new IPEndPoint(ip, 6000);
+
+            //mysql_Thread.newsock.Connect(lep);
+            mysql_Thread.newsock.Send(buff);
         }
 
         public void Init_NBIoT()
