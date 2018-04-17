@@ -35,7 +35,7 @@ namespace UDP_Thread
             p_Thread.IsBackground = true;
             p_Thread.Priority = ThreadPriority.AboveNormal;
 
-            byte[] array_byte = new byte[4] { 10, 137, 8, 15 };//设定绑定的ip地址
+            byte[] array_byte = new byte[4] { 192, 168, 1, 84 };//设定绑定的ip地址
             IPAddress ip = new IPAddress(array_byte);
             newsock.Bind(new IPEndPoint(ip, 2333));//设定ip地址及端口号
         }

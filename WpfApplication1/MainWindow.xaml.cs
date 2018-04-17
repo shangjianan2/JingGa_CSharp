@@ -34,7 +34,7 @@ namespace WpfApplication1
         private bool isMouseLeftButtonDown_Tab6 = false;
         Point previousMousePoint_Tab6 = new Point(0, 0);
 
-        public UDP_Communication mysql_Thread = new UDP_Communication(new byte[4] { 10, 137, 8, 15 }, 2333);
+        public UDP_Communication mysql_Thread = new UDP_Communication(new byte[4] { 192, 168, 1, 84 }, 2333);
         
 
         public MainWindow()

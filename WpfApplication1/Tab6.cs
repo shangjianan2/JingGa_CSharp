@@ -289,20 +289,6 @@ namespace WpfApplication1
                     System.Windows.Shapes.Rectangle rectangle_temp = (System.Windows.Shapes.Rectangle)sender;
 
                     Point position_Tab6 = e.GetPosition(rectangle_temp);
-
-                    //double left_temp = Canvas.GetLeft(rectangle_temp);
-                    //double top_temp = Canvas.GetTop(rectangle_temp);
-
-                    //double change_left = (position_Tab6.X - this.previousMousePoint_Tab6.X) * scaleTransform_Array[0].ScaleX;
-                    //double change_top = (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * scaleTransform_Array[0].ScaleY;
-                    ////rectangle_temp.RenderTransform[]
-
-                    //Canvas.SetLeft(rectangle_temp, (left_temp - change_left));
-                    //Canvas.SetTop(rectangle_temp, (top_temp - change_top));
-
-                    //double left_temp2 = Canvas.GetLeft(rectangle_temp);
-                    //double top_temp2 = Canvas.GetTop(rectangle_temp);
-
                     
                     for (int i = 0; i < size_chanel; i++)
                     {
@@ -310,38 +296,20 @@ namespace WpfApplication1
                         {
                             position_Tab6 = e.GetPosition(rectangle_Array[i]);
 
-                            //translateTransform_Array[i].X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * scaleTransform_Array[i].ScaleX;
-                            //translateTransform_Array[i].Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * scaleTransform_Array[i].ScaleY;
-
                             Canvas.SetLeft(rectangle_Array[i], Canvas.GetLeft(rectangle_Array[i]) + (position_Tab6.X - this.previousMousePoint_Tab6.X) * scaleTransform_Array[i].ScaleX);
                             Canvas.SetTop(rectangle_Array[i], Canvas.GetTop(rectangle_Array[i]) + (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * scaleTransform_Array[i].ScaleY);
-                            System.Diagnostics.Debug.WriteLine("GetLeft {0} GetTop {1}", Canvas.GetLeft(rectangle_Array[i]), Canvas.GetTop(rectangle_Array[i]));
+                            //System.Diagnostics.Debug.WriteLine("GetLeft {0} GetTop {1}", Canvas.GetLeft(rectangle_Array[i]), Canvas.GetTop(rectangle_Array[i]));此处显示改变
+                            //System.Diagnostics.Debug.WriteLine("translateTransform_Array {0} {1}", translateTransform_Array[i].X, translateTransform_Array[i].Y);此处显示不变
                             break;
                         }
                     }
-
-
-
-                    //Point position_Tab6 = e.GetPosition(img_Tab6);
-                    //tlt_Tab6.X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * sfr_Tab6.ScaleX;
-                    //tlt_Tab6.Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * sfr_Tab6.ScaleY;
-
-
-
-                    //for (int i = 0; i < size_chanel; i++)//size_chanel
-                    //{
-                    //    translateTransform_Array[i].X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * scaleTransform_Array[i].ScaleX;
-                    //    translateTransform_Array[i].Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * scaleTransform_Array[i].ScaleY;
-                    //}
                 }
                 else
                 {
                     Point position_Tab6 = e.GetPosition(img_Tab6);
                     tlt_Tab6.X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * sfr_Tab6.ScaleX;
                     tlt_Tab6.Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * sfr_Tab6.ScaleY;
-
-                    //tlt2_Tab6.X += (position_Tab6.X - this.previousMousePoint_Tab6.X) * sfr_Tab6.ScaleX;
-                    //tlt2_Tab6.Y += (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * sfr_Tab6.ScaleY;
+                    
 
                     for (int i = 0; i < size_chanel; i++)//size_chanel
                     {
@@ -468,10 +436,8 @@ namespace WpfApplication1
         {
             try
             {
-                Canvas.SetLeft(rectangle1_Tab6, Canvas.GetLeft(rectangle1_Tab6) + tlt1_Tab6.X - tlt_Tab6.X);
-                Canvas.SetTop(rectangle1_Tab6, Canvas.GetTop(rectangle1_Tab6) + tlt1_Tab6.Y - tlt_Tab6.Y);
-                tlt1_Tab6.X = tlt_Tab6.X;
-                tlt1_Tab6.Y = tlt_Tab6.Y;
+                System.Diagnostics.Debug.WriteLine(img_Tab6.Source.ToString());
+                //img_Tab6.Source = new BitmapImage(new Uri(sfd.FileName));
             }
             catch
             {
