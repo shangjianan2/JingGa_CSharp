@@ -13,8 +13,9 @@
                             <GradientStop Color="LightSkyBlue" Offset="1" />
                         </LinearGradientBrush>
                     </Grid.Background>
+                    
                     <ComboBox x:Name="Tab1_ComboBox" SelectionChanged="Tab1_ComboBox_SelectionChanged" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100"/>
-
+                    <Label Content="请选择账号登陆" FontSize="20" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="Auto" Margin="0, 0, 0, 70"/>
                 </Grid>
 				</TabItem>
             <TabItem x:Name="Tab2" Height="0">
@@ -33,6 +34,7 @@
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="50"/>
 					</Grid.RowDefinitions>
+                    <Label Content="请选择管理员子界面" FontSize="20" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="Auto" Margin="0, 0, 0, 70" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <ComboBox x:Name="Tab2_ComboBox" SelectionChanged="Tab2_ComboBox_SelectionChanged" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100"/>
 					<Button x:Name="Tab2_Back_Button" Click="Tab2_Back_Button_Click" Grid.Column="1" Grid.Row="1" Width="90" Height="40"/>
 				</Grid>
@@ -79,8 +81,15 @@
 							</Rectangle.RenderTransform>
 						</Rectangle>
 					</Canvas>
-					
-					<Rectangle Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="4" Fill="SlateGray"/>
+
+                    <Rectangle Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="4">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                                <GradientStop Color="White" Offset="0.0" />
+                                <GradientStop Color="LightSkyBlue" Offset="1" />
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
 					<ListView Height="Auto" Width="Auto"  Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="1">
 						<ListView.View>
 							<GridView>
@@ -153,6 +162,12 @@
 			</TabItem>
 			<TabItem x:Name="Tab4" Height="0">
 				<Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                            <GradientStop Color="White" Offset="0.0" />
+                            <GradientStop Color="LightSkyBlue" Offset="1" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*"/>
 						<ColumnDefinition Width="*"/>
@@ -200,6 +215,12 @@
 			</TabItem>
 			<TabItem x:Name="Tab5" Height="0">
 				<Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                            <GradientStop Color="White" Offset="0.0" />
+                            <GradientStop Color="LightSkyBlue" Offset="1" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*"/>
 						<ColumnDefinition Width="*"/>
@@ -1183,8 +1204,15 @@
                             </Rectangle.RenderTransform>
                         </Rectangle>
                     </Canvas>
-					
-					<Rectangle Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="4" Fill="SlateGray"/>
+
+                    <Rectangle Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="4">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                                <GradientStop Color="White" Offset="0.0" />
+                                <GradientStop Color="LightSkyBlue" Offset="1" />
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
 					<Button x:Name="Tab6_Back_Button" Click="Tab6_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5"/>
                     <Button x:Name="DaoRuDiTu_Button" Click="Tab6_DaoRuDiTu_Button_Click" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Height="50" Width="100"/>
                     <Button x:Name="DaoRuTuPian_Button" Click="Tab6_DaoRuTuPian_Button_Click" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Height="50" Width="100"/>
