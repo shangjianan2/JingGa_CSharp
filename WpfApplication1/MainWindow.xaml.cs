@@ -59,6 +59,10 @@ namespace WpfApplication1
 
             //添加定时器，因为长时间上位机不向下位机发送指令上位机与云平台会断线
             SendToIoT = new System.Threading.Timer(new System.Threading.TimerCallback(SendToIoTCall), this, 5000, 5000);
+
+            //为Tab4（用户维护界面）中的listview初始化
+            Init_Tab4_CurrentStatus_ListView(ref test5_Mem_Tab4_array, Tab4_User_ListView);
+            Init_test5_Mem_Tab4_array(ref test5_Mem_Tab4_array);
         }
 
         public void SendToIoTCall(object state)
@@ -158,12 +162,7 @@ namespace WpfApplication1
 
         
 
-        //Tab用户维护
-        private void Tab4_Back_Button_Click(object sender, RoutedEventArgs e)
-        {
-            tabcontrol.SelectedIndex = 1;
-            Init_Tab2_ComboBox();
-        }
+        
 
         //节点维护
         private void Tab5_Back_Button_Click(object sender, RoutedEventArgs e)
@@ -405,6 +404,57 @@ namespace WpfApplication1
                     date = value;
                 }
                 OnPropertyChanged("Date");
+            }
+        }
+
+        private void OnPropertyChanged(string strPropertyInfo)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(strPropertyInfo));
+            }
+        }
+    }
+
+    public class test5_mem_Tab4 : INotifyPropertyChanged
+    {
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        
+        private string username;
+        private string password;
+
+        public string UserName
+        {
+            get { return username; }
+            set
+            {
+                if (value == null)
+                {
+                    username = " ";
+                }
+                else
+                {
+                    username = value;
+                }
+                OnPropertyChanged("UserName");
+            }
+        }
+
+        public string PassWord
+        {
+            get { return password; }
+            set
+            {
+                if (value == null)
+                {
+                    password = " ";
+                }
+                else
+                {
+                    password = value;
+                }
+                OnPropertyChanged("PassWord");
             }
         }
 
