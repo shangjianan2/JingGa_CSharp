@@ -195,12 +195,7 @@ namespace WpfApplication1
 
         
 
-        //其他
-        private void Tab7_Back_Button_Click(object sender, RoutedEventArgs e)
-        {
-            tabcontrol.SelectedIndex = 1;
-            Init_Tab2_ComboBox();
-        }
+        
 
                 
     }
