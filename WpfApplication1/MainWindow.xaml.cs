@@ -1,4 +1,5 @@
-﻿using System;
+﻿//#define YanShi
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -70,7 +71,9 @@ namespace WpfApplication1
             Init_Tab5_CurrentStatus_ListView(ref test5_Mem_Tab5_array, Tab5_JieDian_ListView);
             Init_test5_Mem_Tab5_array(ref test5_Mem_Tab5_array);
 
+#if YanShi
             tabcontrol.SelectedIndex = 7;
+#endif
         }
 
         public void SendToIoTCall(object state)
@@ -85,6 +88,7 @@ namespace WpfApplication1
             //mysql_Thread.newsock.Connect(lep);
             mysql_Thread.newsock.Send(buff);
 
+#if YanShi
             if(flag_Tab8 >= 2)
             {
                 
@@ -103,6 +107,7 @@ namespace WpfApplication1
                 
                 flag_Tab8++;
             }
+#endif
         }
 
         public void Init_NBIoT()
@@ -118,7 +123,7 @@ namespace WpfApplication1
             mysql_Thread.newsock.Send(buff);
         }
 
-        #region//rec2_NewMessage_Form1函数是rec_NewMessage_Form1函数的新的实现，可以返回源地址和源端口
+#region//rec2_NewMessage_Form1函数是rec_NewMessage_Form1函数的新的实现，可以返回源地址和源端口
         public void rec2_NewMessage_Form1(byte[] message, ref EndPoint endPoint_tt)
         {
             //if (message.Length != 14)//数据的有效性还需要检验，但是暂时没有想到靠谱的方法
@@ -142,7 +147,7 @@ namespace WpfApplication1
 
             Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
         }
-        #endregion
+#endregion
 
         
 
