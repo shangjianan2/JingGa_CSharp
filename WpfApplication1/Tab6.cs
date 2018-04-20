@@ -385,14 +385,15 @@ namespace WpfApplication1
                         return;
                     }
 
+                    clear_img_canvas();
                     clear_tlt();//将每个矩形的tlt清零
                     clear_scale();
 
-                    //for (int i = 0; i < (size_chanel * 4); i += 4)
-                    //{
-                    //    change_XY_rectangle(rectangle_Array[Convert.ToInt16(ss[i]) - 1], Convert.ToInt16(ss[i + 1]), Convert.ToInt16(ss[i + 2]));
-                    //}
-                    //img_Tab6.Source = new BitmapImage(new Uri(ss[size_chanel * 4]));
+                    for (int i = 0; i < (size_chanel * 4); i += 4)
+                    {
+                        change_XY_rectangle(rectangle_Array[Convert.ToInt16(ss[i]) - 1], Convert.ToInt16(ss[i + 1]), Convert.ToInt16(ss[i + 2]));
+                    }
+                    img_Tab6.Source = new BitmapImage(new Uri(ss[size_chanel * 4]));
                 }
                 
                 #endregion
@@ -451,14 +452,24 @@ namespace WpfApplication1
         }
         #endregion
 
+        public void clear_img_canvas()
+        {
+            Canvas.SetTop(img_Tab6, 0);
+            Canvas.SetLeft(img_Tab6, 0);
+        }
+
         public void clear_scale()
         {            
             this.sfr_Tab6.CenterX = 0;
             this.sfr_Tab6.CenterY = 0;
+            this.sfr_Tab6.ScaleX = 1;
+            this.sfr_Tab6.ScaleY = 1;
             for (int i = 0; i < size_chanel; i++)
             {
                 scaleTransform_Array[i].CenterX = 0;
                 scaleTransform_Array[i].CenterY = 0;
+                scaleTransform_Array[i].ScaleX = 1;
+                scaleTransform_Array[i].ScaleY = 1;
             }
         }
 
