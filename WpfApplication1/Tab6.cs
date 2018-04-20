@@ -296,7 +296,7 @@ namespace WpfApplication1
                         if (rectangle_Array[i].Name == rectangle_temp.Name)
                         {
                             position_Tab6 = e.GetPosition(rectangle_Array[i]);
-
+                            //单独拖拽节点只会更改节点的在Canvas中的相对位置（left top），不会更改其他变量
                             Canvas.SetLeft(rectangle_Array[i], Canvas.GetLeft(rectangle_Array[i]) + (position_Tab6.X - this.previousMousePoint_Tab6.X) * scaleTransform_Array[i].ScaleX);
                             Canvas.SetTop(rectangle_Array[i], Canvas.GetTop(rectangle_Array[i]) + (position_Tab6.Y - this.previousMousePoint_Tab6.Y) * scaleTransform_Array[i].ScaleY);
                             //System.Diagnostics.Debug.WriteLine("GetLeft {0} GetTop {1}", Canvas.GetLeft(rectangle_Array[i]), Canvas.GetTop(rectangle_Array[i]));此处显示改变
@@ -385,9 +385,9 @@ namespace WpfApplication1
                         return;
                     }
 
-                    clear_img_canvas();
+                    clear_img_canvas();//将地图的图片位置归零
                     clear_tlt();//将每个矩形的tlt清零
-                    clear_scale();
+                    clear_scale();//将所有的放大倍数归零（具体是不是放大倍数我也不知道，反正就是将之前所有因为操作而更改的数据全部复位，其中放大倍数应该为1）
 
                     for (int i = 0; i < (size_chanel * 4); i += 4)
                     {
