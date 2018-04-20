@@ -266,6 +266,7 @@ namespace WpfApplication1
                 previousMousePoint_Tab6 = e.GetPosition(img_Tab6);
                 //System.Diagnostics.Debug.WriteLine("tlt_x {0} tlt_y {1}", tlt_Tab6.X, tlt_Tab6.Y);
             }
+            System.Diagnostics.Debug.WriteLine("{0} {1}", sfr_Tab6.CenterX, sfr_Tab6.CenterY);
         }
 
         private void img_MouseUp_Tab6(object sender, MouseButtonEventArgs e)
@@ -384,12 +385,16 @@ namespace WpfApplication1
                         return;
                     }
 
-                    for (int i = 0; i < (size_chanel * 4); i += 4)
-                    {
-                        change_XY_rectangle(rectangle_Array[Convert.ToInt16(ss[i]) - 1], Convert.ToInt16(ss[i + 1]), Convert.ToInt16(ss[i + 2]));
-                    }
-                    img_Tab6.Source = new BitmapImage(new Uri(ss[size_chanel * 4]));
+                    clear_tlt();//将每个矩形的tlt清零
+                    clear_scale();
+
+                    //for (int i = 0; i < (size_chanel * 4); i += 4)
+                    //{
+                    //    change_XY_rectangle(rectangle_Array[Convert.ToInt16(ss[i]) - 1], Convert.ToInt16(ss[i + 1]), Convert.ToInt16(ss[i + 2]));
+                    //}
+                    //img_Tab6.Source = new BitmapImage(new Uri(ss[size_chanel * 4]));
                 }
+                
                 #endregion
             }
             catch
@@ -445,6 +450,29 @@ namespace WpfApplication1
             }
         }
         #endregion
+
+        public void clear_scale()
+        {            
+            this.sfr_Tab6.CenterX = 0;
+            this.sfr_Tab6.CenterY = 0;
+            for (int i = 0; i < size_chanel; i++)
+            {
+                scaleTransform_Array[i].CenterX = 0;
+                scaleTransform_Array[i].CenterY = 0;
+            }
+        }
+
+        public void clear_tlt()
+        {
+            this.tlt_Tab6.X = 0;
+            this.tlt_Tab6.Y = 0;
+            for (int i = 0; i < size_chanel; i++)//size_chanel
+            {
+                translateTransform_Array[i].X = 0;
+                translateTransform_Array[i].Y = 0;
+                //System.Diagnostics.Debug.WriteLine("rectangle{0} tlt:{1} {2} scale: {3} {4}", (i + 1), translateTransform_Array[i].X, translateTransform_Array[i].Y, scaleTransform_Array[i].CenterX, scaleTransform_Array[i].CenterY);
+            }
+        }
 
 
         //返回按键
