@@ -21,6 +21,7 @@ using UDP_Thread;
 using System.Net;
 using System.Net.Sockets;
 using System.ComponentModel;
+using IP_PeiZhiWenJian_JieXi;
 
 namespace WpfApplication1
 {
@@ -35,12 +36,14 @@ namespace WpfApplication1
         private bool isMouseLeftButtonDown_Tab6 = false;
         Point previousMousePoint_Tab6 = new Point(0, 0);
 
-        public UDP_Communication mysql_Thread = new UDP_Communication(new byte[4] { 192, 168, 1, 84 }, 2333);
+        public UDP_Communication mysql_Thread = null;
 
         private System.Threading.Timer SendToIoT = null;
 
         byte flag_Tab8 = 0;
-        
+
+        IP_PZWJ_JieXi IP_WJ_JieXi = null;
+
 
         public MainWindow()
         {
@@ -54,11 +57,20 @@ namespace WpfApplication1
             Init_scaleTransform_Array();
             Init_rectangle_Array();
 
-            Init_NBIoT();
-
+            byte[] IP_byte_array = new byte[4];
+            int DuanKou_in = 0;
+            Init_PeiZhiIPAddress(ref IP_byte_array, ref DuanKou_in);
+            //初始化udp通讯类
+            mysql_Thread = new UDP_Communication(IP_byte_array, DuanKou_in);
             //注册事件
             mysql_Thread.rev_New2 += new recNewMessage2(rec2_NewMessage_Form1);
             mysql_Thread.recThread_Start();
+
+            Init_NBIoT();
+
+            
+
+            
 
             //添加定时器，因为长时间上位机不向下位机发送指令上位机与云平台会断线
             SendToIoT = new System.Threading.Timer(new System.Threading.TimerCallback(SendToIoTCall), this, 3000, 3000);
@@ -74,6 +86,23 @@ namespace WpfApplication1
 #if YanShi
             tabcontrol.SelectedIndex = 7;
 #endif
+        }
+
+        public void Init_PeiZhiIPAddress(ref byte[] temp_byte_array, ref int temp_duankou_int)
+        {
+            try
+            {
+                #region
+                
+                IP_WJ_JieXi = new IP_PZWJ_JieXi("C:\\NBIoT\\IP.txt");
+                temp_byte_array = IP_WJ_JieXi.IP;
+                temp_duankou_int = IP_WJ_JieXi.DuanKou;
+                #endregion
+            }
+            catch
+            {
+                MessageBox.Show("IP配置文件加载失败", "加载失败");
+            }
         }
 
         public void SendToIoTCall(object state)
