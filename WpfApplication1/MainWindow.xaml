@@ -8,12 +8,12 @@
 			<TabItem x:Name="Tab1" Height="0" Background="Black">
                 <Grid>
                     
-                    <Grid.Background>
+                    <!--<Grid.Background>
                         <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
                             <GradientStop Color="White" Offset="0.0" />
                             <GradientStop Color="LightSkyBlue" Offset="1" />
                         </LinearGradientBrush>
-                    </Grid.Background>
+                    </Grid.Background>-->
                     <MediaElement Source="file://C:\NBIoT\Tab1.gif" Stretch="Fill" MediaEnded="MediaElement_MediaEnded"/>
                     <ComboBox x:Name="Tab1_ComboBox" SelectionChanged="Tab1_ComboBox_SelectionChanged" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100"/>
                     <Label Content="请选择账号登陆" FontSize="20" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="Auto" Margin="0, 0, 0, 70"/>
@@ -21,12 +21,12 @@
 				</TabItem>
             <TabItem x:Name="Tab2" Height="0">
                 <Grid>
-                    <Grid.Background>
+                    <!--<Grid.Background>
                         <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
                             <GradientStop Color="White" Offset="0.0" />
                             <GradientStop Color="LightSkyBlue" Offset="1" />
                         </LinearGradientBrush>
-                    </Grid.Background>
+                    </Grid.Background>-->
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*"/>
 						<ColumnDefinition Width="100"/>
