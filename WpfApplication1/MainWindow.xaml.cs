@@ -55,6 +55,10 @@ namespace WpfApplication1
             Init_scaleTransform_Array();
             Init_rectangle_Array();
 
+            Init_translateTransform_Array_Tab3();
+            Init_scaleTransform_Array_Tab3();
+            Init_rectangle_Array_Tab3();
+
             Init_UDP();//初始化udp通讯，
 
             
