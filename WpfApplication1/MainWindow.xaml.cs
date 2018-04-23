@@ -39,9 +39,7 @@ namespace WpfApplication1
         public UDP_Communication mysql_Thread = null;
 
         private System.Threading.Timer SendToIoT = null;
-
-        byte flag_Tab8 = 0;
-
+        
         IP_PZWJ_JieXi IP_WJ_JieXi = null;
 
 
@@ -57,23 +55,15 @@ namespace WpfApplication1
             Init_scaleTransform_Array();
             Init_rectangle_Array();
 
-            byte[] IP_byte_array = new byte[4];
-            int DuanKou_in = 0;
-            Init_PeiZhiIPAddress(ref IP_byte_array, ref DuanKou_in);
-            //初始化udp通讯类
-            mysql_Thread = new UDP_Communication(IP_byte_array, DuanKou_in);
-            //注册事件
-            mysql_Thread.rev_New2 += new recNewMessage2(rec2_NewMessage_Form1);
-            mysql_Thread.recThread_Start();
-
-            Init_NBIoT();
+            Init_UDP();//初始化udp通讯，
 
             
 
             
 
-            //添加定时器，因为长时间上位机不向下位机发送指令上位机与云平台会断线
-            SendToIoT = new System.Threading.Timer(new System.Threading.TimerCallback(SendToIoTCall), this, 3000, 3000);
+            
+
+            
 
             //为Tab4（用户维护界面）中的listview初始化
             Init_Tab4_CurrentStatus_ListView(ref test5_Mem_Tab4_array, Tab4_User_ListView);
@@ -86,6 +76,23 @@ namespace WpfApplication1
 #if YanShi
             tabcontrol.SelectedIndex = 7;
 #endif
+        }
+
+        public void Init_UDP()
+        {
+            byte[] IP_byte_array = new byte[4];
+            int DuanKou_in = 0;
+            Init_PeiZhiIPAddress(ref IP_byte_array, ref DuanKou_in);
+            //初始化udp通讯类
+            mysql_Thread = new UDP_Communication(IP_byte_array, DuanKou_in);
+            //注册事件
+            mysql_Thread.rev_New2 += new recNewMessage2(rec2_NewMessage_Form1);
+            mysql_Thread.recThread_Start();
+
+            Init_NBIoT();//将NBIoT的远程地址绑定
+
+            //添加定时器，因为长时间上位机不向下位机发送指令上位机与云平台会断线
+            SendToIoT = new System.Threading.Timer(new System.Threading.TimerCallback(SendToIoTCall), this, 3000, 3000);
         }
 
         public void Init_PeiZhiIPAddress(ref byte[] temp_byte_array, ref int temp_duankou_int)
