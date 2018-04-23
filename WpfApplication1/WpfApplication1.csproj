@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="IP_PeiZhiWenJian_JieXi.cs" />
+    <Compile Include="Map_PeiZhiWenJian_JieXi.cs" />
     <Compile Include="MySQL_Function.cs" />
     <Compile Include="ShiJianQuJian_GroupBox.cs" />
     <Compile Include="ShuJuJieXi.cs" />

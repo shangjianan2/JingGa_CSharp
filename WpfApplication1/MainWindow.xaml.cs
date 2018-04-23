@@ -22,6 +22,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.ComponentModel;
 using IP_PeiZhiWenJian_JieXi;
+using Map_PeiZhiWenJian_JieXi;
 
 namespace WpfApplication1
 {
@@ -42,6 +43,8 @@ namespace WpfApplication1
         
         IP_PZWJ_JieXi IP_WJ_JieXi = null;
 
+        public int[,] JieDianZuoBiao_Array_int = new int[size_chanel, 2];
+
 
         public MainWindow()
         {
@@ -61,13 +64,13 @@ namespace WpfApplication1
 
             Init_UDP();//初始化udp通讯，
 
-            
+            Init_Map();
 
-            
 
-            
 
-            
+
+
+
 
             //为Tab4（用户维护界面）中的listview初始化
             Init_Tab4_CurrentStatus_ListView(ref test5_Mem_Tab4_array, Tab4_User_ListView);
@@ -80,6 +83,11 @@ namespace WpfApplication1
 #if YanShi
             tabcontrol.SelectedIndex = 7;
 #endif
+        }
+
+        public void Init_Map()
+        {
+            map_PZWJ_JieXi.get_JieDianZuoBiao("C:\\NBIoT\\map.txt", size_chanel, ref JieDianZuoBiao_Array_int);
         }
 
         public void Init_UDP()
