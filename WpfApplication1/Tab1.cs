@@ -61,6 +61,11 @@ namespace WpfApplication1
             this.Init_Tab1_ComboBox();
         }
 
+        private void MediaElement_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            ((MediaElement)sender).Position = ((MediaElement)sender).Position.Add(TimeSpan.FromMilliseconds(1));
+        }
+
         private void Tab1_Button_Click(object sender, RoutedEventArgs e)
         {
             //Tab2.Visibility = System.Windows.Visibility.Visible;

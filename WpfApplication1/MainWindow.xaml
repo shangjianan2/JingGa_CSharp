@@ -7,13 +7,14 @@
 		<TabControl x:Name="tabcontrol" HorizontalAlignment="Stretch" Height="Auto" Margin="-6,-10,-6,-6" VerticalAlignment="Stretch" Width="Auto">
 			<TabItem x:Name="Tab1" Height="0" Background="Black">
                 <Grid>
+                    
                     <Grid.Background>
                         <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
                             <GradientStop Color="White" Offset="0.0" />
                             <GradientStop Color="LightSkyBlue" Offset="1" />
                         </LinearGradientBrush>
                     </Grid.Background>
-                    
+                    <MediaElement Source="file://C:\Users\shang\Desktop\picture.gif" Stretch="Fill" MediaEnded="MediaElement_MediaEnded"/>
                     <ComboBox x:Name="Tab1_ComboBox" SelectionChanged="Tab1_ComboBox_SelectionChanged" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100"/>
                     <Label Content="请选择账号登陆" FontSize="20" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="Auto" Margin="0, 0, 0, 70"/>
                 </Grid>
