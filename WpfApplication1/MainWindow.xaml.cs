@@ -44,6 +44,7 @@ namespace WpfApplication1
         IP_PZWJ_JieXi IP_WJ_JieXi = null;
 
         public int[,] JieDianZuoBiao_Array_int = new int[size_chanel, 2];
+        public string map_LuJing = null;
 
 
         public MainWindow()
@@ -88,6 +89,7 @@ namespace WpfApplication1
         public void Init_Map()
         {
             map_PZWJ_JieXi.get_JieDianZuoBiao("C:\\NBIoT\\map.txt", size_chanel, ref JieDianZuoBiao_Array_int);
+            map_PZWJ_JieXi.get_DiTuLuJing("C:\\NBIoT\\map.txt", size_chanel, ref map_LuJing);
         }
 
         public void Init_UDP()
