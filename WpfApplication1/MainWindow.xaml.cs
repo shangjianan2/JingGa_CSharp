@@ -90,6 +90,17 @@ namespace WpfApplication1
         {
             map_PZWJ_JieXi.get_JieDianZuoBiao("C:\\NBIoT\\map.txt", size_chanel, ref JieDianZuoBiao_Array_int);
             map_PZWJ_JieXi.get_DiTuLuJing("C:\\NBIoT\\map.txt", size_chanel, ref map_LuJing);
+
+            clear_img_canvas();//将地图的图片位置归零
+            clear_tlt();//将每个矩形的tlt清零
+            clear_scale();//将所有的放大倍数归零（具体是不是放大倍数我也不知道，反正就是将之前所有因为操作而更改的数据全部复位，其中放大倍数应该为1）
+
+
+            for(int i = 0; i < size_chanel; i++)
+            {
+                change_XY_rectangle(rectangle_Array[i], Convert.ToDouble(JieDianZuoBiao_Array_int[i, 0]), Convert.ToDouble(JieDianZuoBiao_Array_int[i, 1]));
+            }
+            img_Tab6.Source = new BitmapImage(new Uri(map_LuJing));
         }
 
         public void Init_UDP()
