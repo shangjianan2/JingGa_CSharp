@@ -12,8 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using System.Data;
-using MySQL_Funtion;
+using System.IO;
 
 //using UDP_Thread;
 
@@ -437,13 +436,32 @@ namespace WpfApplication1
         }
         #endregion
 
-        #region
+        #region//导出地图配置文件
         private void Tab6_DaoChuDiTu_Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+                StringBuilder stringBuilder_tt = new StringBuilder();
+
+                for (int i = 0; i < size_chanel; i++)
+                {
+                    stringBuilder_tt.AppendFormat("{0} {1} {2}\r\n", (i + 1), (Canvas.GetLeft(rectangle_Array[i])), (Canvas.GetTop(rectangle_Array[i])));
+                }
                 System.Diagnostics.Debug.WriteLine(img_Tab6.Source.ToString());
-                //img_Tab6.Source = new BitmapImage(new Uri(sfd.FileName));
+
+                //开始保存配置信息
+                Microsoft.Win32.SaveFileDialog sfd = new Microsoft.Win32.SaveFileDialog();
+                sfd.DefaultExt = "txt";
+                sfd.Filter = "文本文件(*.txt)|*.txt";
+                if(sfd.ShowDialog() == true)
+                {
+                    FileStream fs_tt = new FileStream(sfd.FileName, FileMode.OpenOrCreate);
+                    using (StreamWriter writer = new StreamWriter(fs_tt))
+                    {
+                        writer.Write(stringBuilder_tt);
+                    }
+                }
+
             }
             catch
             {
