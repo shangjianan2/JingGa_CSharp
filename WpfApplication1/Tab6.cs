@@ -377,8 +377,9 @@ namespace WpfApplication1
                 {
                     System.IO.StreamReader rd = System.IO.File.OpenText(sfd.FileName);
                     string s = rd.ReadToEnd();
-                    string[] ss = s.Split(' ', '\n', '\r');
-                    if(ss.Length != size_chanel * 4 + 3)
+                    s = s.Replace("\r\n", " ");
+                    string[] ss = s.Split(' ');
+                    if(ss.Length != size_chanel * 3 + 1)
                     {
                         MessageBox.Show("文件格式错误", "提示");
                         return;
@@ -388,11 +389,11 @@ namespace WpfApplication1
                     clear_tlt();//将每个矩形的tlt清零
                     clear_scale();//将所有的放大倍数归零（具体是不是放大倍数我也不知道，反正就是将之前所有因为操作而更改的数据全部复位，其中放大倍数应该为1）
 
-                    for (int i = 0; i < (size_chanel * 4); i += 4)
+                    for (int i = 0; i < (size_chanel * 3); i += 3)
                     {
                         change_XY_rectangle(rectangle_Array[Convert.ToInt16(ss[i]) - 1], Convert.ToInt16(ss[i + 1]), Convert.ToInt16(ss[i + 2]));
                     }
-                    img_Tab6.Source = new BitmapImage(new Uri(ss[size_chanel * 4]));
+                    img_Tab6.Source = new BitmapImage(new Uri(ss[size_chanel * 3]));
                 }
                 
                 #endregion
