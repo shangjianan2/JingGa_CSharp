@@ -442,12 +442,18 @@ namespace WpfApplication1
             try
             {
                 StringBuilder stringBuilder_tt = new StringBuilder();
+                string[] get_absolute = new string[3];
+                string get_absolute_str = null;
 
                 for (int i = 0; i < size_chanel; i++)
                 {
                     stringBuilder_tt.AppendFormat("{0} {1} {2}\r\n", (i + 1), (Canvas.GetLeft(rectangle_Array[i])), (Canvas.GetTop(rectangle_Array[i])));
                 }
-                System.Diagnostics.Debug.WriteLine(img_Tab6.Source.ToString());
+                get_absolute_str = img_Tab6.Source.ToString().Replace("///", ",");
+                get_absolute = get_absolute_str.Split(',');
+                get_absolute[1] = get_absolute[1].Replace('/', '\\');
+                stringBuilder_tt.AppendFormat(get_absolute[1]);
+                //System.Diagnostics.Debug.WriteLine(get_absolute[1]);
 
                 //开始保存配置信息
                 Microsoft.Win32.SaveFileDialog sfd = new Microsoft.Win32.SaveFileDialog();
