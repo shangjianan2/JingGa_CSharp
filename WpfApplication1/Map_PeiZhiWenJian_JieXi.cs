@@ -22,7 +22,7 @@ namespace Map_PeiZhiWenJian_JieXi
                 s = s.Replace("\r\n", " ");
 
                 string[] s_Array = s.Split(' ');
-                if(s_Array.Length != (size * 3 + 2))
+                if(s_Array.Length != (size * 3 + 1))
                 {
                     throw (new System.Exception("the length of s_Array is wrong"));
                 }
@@ -64,7 +64,7 @@ namespace Map_PeiZhiWenJian_JieXi
 
                 string[] s_Array = s.Split(' ');
 
-                DiTuLuJing = s_Array[s_Array.Length - 2];
+                DiTuLuJing = s_Array[s_Array.Length - 1];
 
 
                 return true;
