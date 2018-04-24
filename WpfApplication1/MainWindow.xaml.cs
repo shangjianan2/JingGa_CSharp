@@ -101,6 +101,8 @@ namespace WpfApplication1
                 change_XY_rectangle(rectangle_Array[i], Convert.ToDouble(JieDianZuoBiao_Array_int[i, 0]), Convert.ToDouble(JieDianZuoBiao_Array_int[i, 1]));
             }
             img_Tab6.Source = new BitmapImage(new Uri(map_LuJing));
+
+            update_map_Tab3();
         }
 
         public void Init_UDP()

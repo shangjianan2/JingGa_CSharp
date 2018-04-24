@@ -381,6 +381,54 @@ namespace WpfApplication1
         }
         #endregion
 
+        #region
+        public void clear_img_canvas_Tab3()
+        {
+            Canvas.SetTop(img, 0);
+            Canvas.SetLeft(img, 0);
+        }
+
+        public void clear_scale_Tab3()
+        {
+            this.sfr.CenterX = 0;
+            this.sfr.CenterY = 0;
+            this.sfr.ScaleX = 1;
+            this.sfr.ScaleY = 1;
+            for (int i = 0; i < size_chanel; i++)
+            {
+                scaleTransform_Array_Tab3[i].CenterX = 0;
+                scaleTransform_Array_Tab3[i].CenterY = 0;
+                scaleTransform_Array_Tab3[i].ScaleX = 1;
+                scaleTransform_Array_Tab3[i].ScaleY = 1;
+            }
+        }
+
+        public void clear_tlt_Tab3()
+        {
+            this.tlt.X = 0;
+            this.tlt.Y = 0;
+            for (int i = 0; i < size_chanel; i++)//size_chanel
+            {
+                translateTransform_Array_Tab3[i].X = 0;
+                translateTransform_Array_Tab3[i].Y = 0;
+                //System.Diagnostics.Debug.WriteLine("rectangle{0} tlt:{1} {2} scale: {3} {4}", (i + 1), translateTransform_Array[i].X, translateTransform_Array[i].Y, scaleTransform_Array[i].CenterX, scaleTransform_Array[i].CenterY);
+            }
+        }
+        #endregion
+
+        public void update_map_Tab3()
+        {
+            clear_img_canvas_Tab3();
+            clear_scale_Tab3();
+            clear_tlt_Tab3();
+
+            for (int i = 0; i < size_chanel; i++)
+            {
+                change_XY_rectangle(rectangle_Array_Tab3[i], Convert.ToDouble(JieDianZuoBiao_Array_int[i, 0]), Convert.ToDouble(JieDianZuoBiao_Array_int[i, 1]));
+            }
+            img.Source = new BitmapImage(new Uri(map_LuJing));
+        }
+
         //Tab3 用户界面
         private void Tab3_Back_Button_Click(object sender, RoutedEventArgs e)
         {
