@@ -1,4 +1,4 @@
-﻿//#define YanShi
+﻿#define YanShi
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +46,9 @@ namespace WpfApplication1
         public int[,] JieDianZuoBiao_Array_int = new int[size_chanel, 2];
         public string map_LuJing = null;
 
+#if YanShi
+        public int flag_Tab8 = 0;
+#endif
 
         public MainWindow()
         {
