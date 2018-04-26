@@ -1,4 +1,4 @@
-﻿#define YanShi
+﻿//#define YanShi
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -97,8 +97,16 @@ namespace WpfApplication1
         {
             string[] array_str = mysql_PZWJ_JieXi.read_mysql_PeiZhiWenJian("C:\\NBIoT\\mysql.txt");
             if (array_str == null)
-                return;
-            ShuJuKu = new mysql_PZWJ_JieXi(array_str[0], array_str[1], array_str[2], array_str[3]);
+                Application.Current.Shutdown();
+            try
+            {
+                ShuJuKu = new mysql_PZWJ_JieXi(array_str[0], array_str[1], array_str[2], array_str[3]);
+            }
+            catch(Exception ee)
+            {
+                MessageBox.Show(ee.Message, "error");
+                Application.Current.Shutdown();
+            }
         }
         #endregion
 
