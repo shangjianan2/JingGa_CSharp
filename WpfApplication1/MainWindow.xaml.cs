@@ -23,6 +23,7 @@ using System.Net.Sockets;
 using System.ComponentModel;
 using IP_PeiZhiWenJian_JieXi;
 using Map_PeiZhiWenJian_JieXi;
+using MySQL_PeiZhiWenJian_JieXi;
 
 namespace WpfApplication1
 {
@@ -45,6 +46,8 @@ namespace WpfApplication1
 
         public int[,] JieDianZuoBiao_Array_int = new int[size_chanel, 2];
         public string map_LuJing = null;
+
+        public mysql_PZWJ_JieXi ShuJuKu = null;
 
 #if YanShi
         public int flag_Tab8 = 0;
@@ -70,7 +73,7 @@ namespace WpfApplication1
 
             Init_Map();
 
-
+            Init_MySQL();
 
 
 
@@ -88,6 +91,16 @@ namespace WpfApplication1
             tabcontrol.SelectedIndex = 7;
 #endif
         }
+
+        #region//有关数据库加载
+        public void Init_MySQL()
+        {
+            string[] array_str = mysql_PZWJ_JieXi.read_mysql_PeiZhiWenJian("C:\\NBIoT\\mysql.txt");
+            if (array_str == null)
+                return;
+            ShuJuKu = new mysql_PZWJ_JieXi(array_str[0], array_str[1], array_str[2], array_str[3]);
+        }
+        #endregion
 
         #region//有关地图加载
         public void Init_Map()
