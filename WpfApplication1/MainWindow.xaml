@@ -3,6 +3,44 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WpfApplication1.MainWindow"
         Title="NBIoT物联网管理系统" Height="700" Width="1000">
+    <Window.Resources>
+        <!--自定义颜色-->
+        <LinearGradientBrush x:Key="LinearGradientBlueBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF377FED" Offset="0" />
+            <GradientStop Color="#FF074CC0" Offset="1" />
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="MyBtnBorderColor" Color="#FF2D78F4"></SolidColorBrush>
+        <SolidColorBrush x:Key="MyBtnHoverBackgroundColor" Color="#FF317EF3"></SolidColorBrush>
+        <!--END-->
+
+        <Style x:Key="MyWpfButton" TargetType="{x:Type Button}" >
+            <Setter Property="Background" Value="{StaticResource LinearGradientBlueBackground}"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="BorderBrush" Value="{StaticResource MyBtnBorderColor}"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" 
+                                SnapsToDevicePixels="true" CornerRadius="3,3,3,3">
+                            <ContentPresenter x:Name="contentPresenter" 
+                                              Focusable="False" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              Margin="{TemplateBinding Padding}" 
+                                              RecognizesAccessKey="True" 
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"  />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource MyBtnHoverBackgroundColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
 	<Grid>
 		<TabControl x:Name="tabcontrol" HorizontalAlignment="Stretch" Height="Auto" Margin="-6,-10,-6,-6" VerticalAlignment="Stretch" Width="Auto">
 			<TabItem x:Name="Tab1" Height="0" Background="Black">
@@ -38,7 +76,7 @@
                     <MediaElement Source="file://C:\NBIoT\Tab1.gif" Stretch="Fill" MediaEnded="MediaElement_MediaEnded" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <Label Content="请选择管理员子界面" FontSize="20" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="Auto" Margin="0, 0, 0, 70" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <ComboBox x:Name="Tab2_ComboBox" SelectionChanged="Tab2_ComboBox_SelectionChanged" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100"/>
-					<Button x:Name="Tab2_Back_Button" Content="返回" Click="Tab2_Back_Button_Click" Grid.Column="1" Grid.Row="1" Width="90" Height="40"/>
+					<Button x:Name="Tab2_Back_Button" Content="返回" Click="Tab2_Back_Button_Click" Grid.Column="1" Grid.Row="1" Width="90" Height="40" Style="{StaticResource ResourceKey=MyWpfButton}"/>
 				</Grid>
 			</TabItem>
 			<TabItem x:Name="Tab3" Height="0">
