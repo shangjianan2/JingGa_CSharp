@@ -186,6 +186,7 @@
         </Style>
         <!--Combox-->
         <Style TargetType="ComboBox" x:Key="ComboBoxStyle">
+            <Setter Property="FontSize" Value="15"/>
             <Setter Property="ItemContainerStyle">
                 <Setter.Value>
                     <!--ComBoxItem-->
