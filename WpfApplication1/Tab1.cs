@@ -45,6 +45,8 @@ namespace WpfApplication1
             passwd_str = temp_DataRow[0][0].ToString();
 
             Window1 passwd_Form2 = new Window1(this);
+            passwd_Form2.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            passwd_Form2.Owner = this;
             passwd_Form2.ShowDialog();
             if (passwd_Form2.DialogResult == true)
             {
