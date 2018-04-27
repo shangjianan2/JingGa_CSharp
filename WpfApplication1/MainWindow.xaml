@@ -167,12 +167,12 @@
 				</TabItem>
             <TabItem x:Name="Tab2" Height="0">
                 <Grid>
-                    <!--<Grid.Background>
+                    <Grid.Background>
                         <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
                             <GradientStop Color="White" Offset="0.0" />
                             <GradientStop Color="LightSkyBlue" Offset="1" />
                         </LinearGradientBrush>
-                    </Grid.Background>-->
+                    </Grid.Background>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*"/>
 						<ColumnDefinition Width="100"/>
@@ -181,7 +181,7 @@
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="50"/>
 					</Grid.RowDefinitions>
-                    <MediaElement Source="file://C:\NBIoT\Tab1.gif" Stretch="Fill" MediaEnded="MediaElement_MediaEnded" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                    <!--<MediaElement Source="file://C:\NBIoT\Tab1.gif" Stretch="Fill" MediaEnded="MediaElement_MediaEnded" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>-->
                     <Label Content="请选择管理员子界面" FontSize="20" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="Auto" Margin="0, 0, 0, 70" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <ComboBox x:Name="Tab2_ComboBox" SelectionChanged="Tab2_ComboBox_SelectionChanged" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100"/>
 					<Button x:Name="Tab2_Back_Button" Content="返回" Click="Tab2_Back_Button_Click" Grid.Column="1" Grid.Row="1" Width="90" Height="40" Style="{StaticResource ResourceKey=MyWpfButton}"/>
