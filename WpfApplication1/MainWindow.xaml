@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WpfApplication1.MainWindow"
         Title="NBIoT物联网管理系统" Height="700" Width="1000">
     <Window.Resources>
-        <!--自定义颜色-->
+        <!--自定义颜色 返回按键-->
         <LinearGradientBrush x:Key="LinearGradientBlueBackground" EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="LightBlue" Offset="0" />
             <GradientStop Color="#FF074CC0" Offset="1" />
@@ -17,6 +17,8 @@
             <Setter Property="Background" Value="{StaticResource LinearGradientBlueBackground}"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="BorderBrush" Value="{StaticResource MyBtnBorderColor}"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="Content" Value="返 回"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -40,7 +42,7 @@
             </Setter>
         </Style>
 
-        <!--自定义颜色-->
+        <!--自定义颜色 地图维护-->
         <LinearGradientBrush x:Key="LinearGradientBlueBackground2" EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="LightBlue" Offset="0" />
             <GradientStop Color="#FF074CC0" Offset="1" />
@@ -53,6 +55,7 @@
             <Setter Property="Background" Value="{StaticResource LinearGradientBlueBackground2}"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="BorderBrush" Value="{StaticResource MyBtnBorderColor2}"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -89,6 +92,7 @@
             <Setter Property="Background" Value="{StaticResource LinearGradientBlueBackground_Tab4}"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="BorderBrush" Value="{StaticResource MyBtnBorderColor_Tab4}"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -125,6 +129,7 @@
             <Setter Property="Background" Value="{StaticResource LinearGradientBlueBackground_Tab5}"></Setter>
             <Setter Property="Foreground" Value="White"></Setter>
             <Setter Property="BorderBrush" Value="{StaticResource MyBtnBorderColor_Tab5}"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -167,12 +172,12 @@
 				</TabItem>
             <TabItem x:Name="Tab2" Height="0">
                 <Grid>
-                    <Grid.Background>
+                    <!--<Grid.Background>
                         <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
                             <GradientStop Color="White" Offset="0.0" />
                             <GradientStop Color="LightSkyBlue" Offset="1" />
                         </LinearGradientBrush>
-                    </Grid.Background>
+                    </Grid.Background>-->
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="*"/>
 						<ColumnDefinition Width="100"/>
@@ -181,10 +186,10 @@
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="50"/>
 					</Grid.RowDefinitions>
-                    <!--<MediaElement Source="file://C:\NBIoT\Tab1.gif" Stretch="Fill" MediaEnded="MediaElement_MediaEnded" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>-->
+                    <MediaElement Source="file://C:\NBIoT\Tab1.gif" Stretch="Fill" MediaEnded="MediaElement_MediaEnded" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <Label Content="请选择管理员子界面" FontSize="20" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="Auto" Margin="0, 0, 0, 70" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <ComboBox x:Name="Tab2_ComboBox" SelectionChanged="Tab2_ComboBox_SelectionChanged" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100"/>
-					<Button x:Name="Tab2_Back_Button" Content="返回" Click="Tab2_Back_Button_Click" Grid.Column="1" Grid.Row="1" Width="90" Height="40" Style="{StaticResource ResourceKey=MyWpfButton}"/>
+					<Button x:Name="Tab2_Back_Button" Click="Tab2_Back_Button_Click" Grid.Column="1" Grid.Row="1" Width="90" Height="40" Style="{StaticResource ResourceKey=MyWpfButton}"/>
 				</Grid>
 			</TabItem>
 			<TabItem x:Name="Tab3" Height="0">
@@ -809,7 +814,7 @@
 							</GridView>
 						</ListView.View>
 					</ListView>
-                    <Button x:Name="Tab3_Back_Button" Content="返回" Click="Tab3_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
+                    <Button x:Name="Tab3_Back_Button" Click="Tab3_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
 				</Grid>
 			</TabItem>
 			<TabItem x:Name="Tab4" Height="0">
@@ -861,7 +866,7 @@
                         
                     </ListView>
 
-                    <Button x:Name="Tab4_Back_Button" Content="返回" Click="Tab4_Back_Button_Click" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="90" Margin="0, 0, 5, 5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
+                    <Button x:Name="Tab4_Back_Button" Click="Tab4_Back_Button_Click" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="90" Margin="0, 0, 5, 5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
 
 				</Grid>
 			</TabItem>
@@ -923,7 +928,7 @@
                         </ListView.View>
                     </ListView>
 
-                    <Button x:Name="Tab5_Back_Button" Content="返回" Click="Tab5_Back_Button_Click" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="90" Margin="0, 0, 5, 5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
+                    <Button x:Name="Tab5_Back_Button" Click="Tab5_Back_Button_Click" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="90" Margin="0, 0, 5, 5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
 
 				</Grid>
 			</TabItem>
@@ -1865,7 +1870,7 @@
                             </LinearGradientBrush>
                         </Rectangle.Fill>
                     </Rectangle>
-                    <Button x:Name="Tab6_Back_Button" Content="返回" Click="Tab6_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
+                    <Button x:Name="Tab6_Back_Button" Click="Tab6_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
                     <Button x:Name="DaoRuDiTu_Button" Content="配置文件加载" Click="Tab6_DaoRuDiTu_Button_Click" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Height="50" Width="100" Style="{StaticResource ResourceKey=MyWpfButton2}"/>
                     <Button x:Name="DaoRuTuPian_Button" Content="地图图片加载" Click="Tab6_DaoRuTuPian_Button_Click" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Height="50" Width="100" Style="{StaticResource ResourceKey=MyWpfButton2}"/>
                     <Button x:Name="DaoChuDiTu_Button" Content="导出配置文件" Click="Tab6_DaoChuDiTu_Button_Click" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Height="50" Width="100" Style="{StaticResource ResourceKey=MyWpfButton2}"/>
@@ -1888,7 +1893,7 @@
                         <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
 
-                    <Button x:Name="Tab7_Back_Button" Content="返回" Click="Tab7_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
+                    <Button x:Name="Tab7_Back_Button" Click="Tab7_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
                 </Grid>
             </TabItem>
 			<TabItem x:Name="Tab8" Height="0">
