@@ -6,13 +6,56 @@
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
         Title="Window1" Height="150" Width="300">
+    <Window.Resources>
+        <!--自定义颜色-->
+        <LinearGradientBrush x:Key="LinearGradientBlueBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="LightBlue" Offset="0" />
+            <GradientStop Color="#FF074CC0" Offset="1" />
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="MyBtnBorderColor" Color="#FF2D78F4"></SolidColorBrush>
+        <SolidColorBrush x:Key="MyBtnHoverBackgroundColor" Color="#FF317EF3"></SolidColorBrush>
+        <!--END-->
+
+        <Style x:Key="MyWpfButton" TargetType="{x:Type Button}" >
+            <Setter Property="Background" Value="{StaticResource LinearGradientBlueBackground}"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="BorderBrush" Value="{StaticResource MyBtnBorderColor}"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" 
+                                SnapsToDevicePixels="true" CornerRadius="3,3,3,3">
+                            <ContentPresenter x:Name="contentPresenter" 
+                                              Focusable="False" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              Margin="{TemplateBinding Padding}" 
+                                              RecognizesAccessKey="True" 
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"  />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource MyBtnHoverBackgroundColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                <GradientStop Color="White" Offset="0.0" />
+                <GradientStop Color="LightSkyBlue" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBox x:Name="Passwd_TextBox" Grid.Column="0" Grid.ColumnSpan="2" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button x:Name="Passwd_Button" Click="Passwd_Button_Click" Grid.Column="2" Width="50" Height="20"/>
+        <Button x:Name="Passwd_Button" Content="确认" Click="Passwd_Button_Click" Grid.Column="2" Width="50" Height="20" Style="{StaticResource ResourceKey=MyWpfButton}"/>
     </Grid>
 </Window>
