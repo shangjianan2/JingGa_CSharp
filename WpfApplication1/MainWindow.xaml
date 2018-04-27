@@ -701,7 +701,7 @@
 							</GridView>
 						</ListView.View>
 					</ListView>
-                    <Button x:Name="Tab3_Back_Button" Content="返回" Click="Tab3_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5"/>
+                    <Button x:Name="Tab3_Back_Button" Content="返回" Click="Tab3_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
 				</Grid>
 			</TabItem>
 			<TabItem x:Name="Tab4" Height="0">
@@ -753,7 +753,7 @@
                         
                     </ListView>
 
-                    <Button x:Name="Tab4_Back_Button" Content="返回" Click="Tab4_Back_Button_Click" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="90" Margin="0, 0, 5, 5"/>
+                    <Button x:Name="Tab4_Back_Button" Content="返回" Click="Tab4_Back_Button_Click" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="90" Margin="0, 0, 5, 5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
 
 				</Grid>
 			</TabItem>
@@ -815,7 +815,7 @@
                         </ListView.View>
                     </ListView>
 
-                    <Button x:Name="Tab5_Back_Button" Content="返回" Click="Tab5_Back_Button_Click" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="90" Margin="0, 0, 5, 5"/>
+                    <Button x:Name="Tab5_Back_Button" Content="返回" Click="Tab5_Back_Button_Click" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="40" Width="90" Margin="0, 0, 5, 5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
 
 				</Grid>
 			</TabItem>
@@ -1757,7 +1757,7 @@
                             </LinearGradientBrush>
                         </Rectangle.Fill>
                     </Rectangle>
-                    <Button x:Name="Tab6_Back_Button" Content="返回" Click="Tab6_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5"/>
+                    <Button x:Name="Tab6_Back_Button" Content="返回" Click="Tab6_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
                     <Button x:Name="DaoRuDiTu_Button" Click="Tab6_DaoRuDiTu_Button_Click" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Height="50" Width="100"/>
                     <Button x:Name="DaoRuTuPian_Button" Click="Tab6_DaoRuTuPian_Button_Click" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Height="50" Width="100"/>
                     <Button x:Name="DaoChuDiTu_Button" Click="Tab6_DaoChuDiTu_Button_Click" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Height="50" Width="100"/>
@@ -1780,7 +1780,7 @@
                         <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
 
-                    <Button x:Name="Tab7_Back_Button" Content="返回" Click="Tab7_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5"/>
+                    <Button x:Name="Tab7_Back_Button" Content="返回" Click="Tab7_Back_Button_Click" Grid.Column="5" Grid.Row="3" Margin="5" Style="{StaticResource ResourceKey=MyWpfButton}"/>
                 </Grid>
             </TabItem>
 			<TabItem x:Name="Tab8" Height="0">
