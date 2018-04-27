@@ -187,6 +187,8 @@
         <!--Combox-->
         <Style TargetType="ComboBox" x:Key="ComboBoxStyle">
             <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="140"/>
             <Setter Property="ItemContainerStyle">
                 <Setter.Value>
                     <!--ComBoxItem-->
@@ -255,7 +257,7 @@
                         </LinearGradientBrush>
                     </Grid.Background>-->
                     <MediaElement Source="file://C:\NBIoT\Tab1.gif" Stretch="Fill" MediaEnded="MediaElement_MediaEnded"/>
-                    <ComboBox x:Name="Tab1_ComboBox" SelectionChanged="Tab1_ComboBox_SelectionChanged" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100" Style="{StaticResource ResourceKey=ComboBoxStyle}"/>
+                    <ComboBox x:Name="Tab1_ComboBox" SelectionChanged="Tab1_ComboBox_SelectionChanged" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ResourceKey=ComboBoxStyle}"/>
                     <Label Content="请选择账号登陆" FontSize="20" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="Auto" Margin="0, 0, 0, 70"/>
                 </Grid>
 				</TabItem>
@@ -277,7 +279,7 @@
 					</Grid.RowDefinitions>
                     <MediaElement Source="file://C:\NBIoT\Tab1.gif" Stretch="Fill" MediaEnded="MediaElement_MediaEnded" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
                     <Label Content="请选择管理员子界面" FontSize="20" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="Auto" Margin="0, 0, 0, 70" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-                    <ComboBox x:Name="Tab2_ComboBox" SelectionChanged="Tab2_ComboBox_SelectionChanged" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="100" Style="{StaticResource ResourceKey=ComboBoxStyle}"/>
+                    <ComboBox x:Name="Tab2_ComboBox" SelectionChanged="Tab2_ComboBox_SelectionChanged" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ResourceKey=ComboBoxStyle}"/>
 					<Button x:Name="Tab2_Back_Button" Click="Tab2_Back_Button_Click" Grid.Column="1" Grid.Row="1" Width="90" Height="40" Style="{StaticResource ResourceKey=MyWpfButton}"/>
 				</Grid>
 			</TabItem>
