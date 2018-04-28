@@ -26,7 +26,7 @@ namespace WpfApplication1
 
         public void Init_Tab1_ComboBox()
         {
-            DataSet dataSet_temp = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, "select name from users", null);
+            DataSet dataSet_temp = MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, "select name from " + ShuJuKu.Table2_YongHu, null);
             DataRowCollection temp_DataRow = dataSet_temp.Tables[0].Rows;
             Tab1_ComboBox.Items.Clear();//清除现有显示
             for (int i = 0; i < temp_DataRow.Count; i++)
@@ -40,7 +40,7 @@ namespace WpfApplication1
             if (Tab1_ComboBox.SelectedItem == null)
                 return;
 
-            DataSet dataSet_temp = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, "select password from users where name=" + "\'" + Tab1_ComboBox.SelectedItem.ToString() + "\'", null);
+            DataSet dataSet_temp = MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, "select password from " + ShuJuKu.Table2_YongHu + " where name=" + "\'" + Tab1_ComboBox.SelectedItem.ToString() + "\'", null);
             DataRowCollection temp_DataRow = dataSet_temp.Tables[0].Rows;
             passwd_str = temp_DataRow[0][0].ToString();
 

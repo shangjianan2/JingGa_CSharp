@@ -21,6 +21,7 @@ namespace MySQL_PeiZhiWenJian_JieXi
             Table3_JieDian = table3_jiedian_tt;
         }
 
+        //注意变量的赋值顺序，一定要先给数据库"ShuJuKu_Name"赋值，因为之后的表的检验要依赖与"ShuJuKu_Name"
         public string ShuJuKu_Name
         {
             get

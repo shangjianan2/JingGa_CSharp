@@ -137,7 +137,7 @@ namespace WpfApplication1
             Microsoft.Office.Interop.Excel.Workbook xlBook = xlApp.Workbooks.Add(true);
 
             //添加列表头
-            DataSet temp_dataset = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, "show columns from test5;", null);
+            DataSet temp_dataset = MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, "show columns from " + ShuJuKu.Table1_ShiJIna_JieDian + ";", null);
             DataRowCollection temp_dataRow = temp_dataset.Tables[0].Rows;
             for (int i = 0; i < temp_dataRow.Count; i++)
             {
@@ -148,9 +148,9 @@ namespace WpfApplication1
 
 
             //添加列
-            string dataSet_temp_str = "select * from test5 where `Date`>=\"" + date_begin.ToString() + "\" and `Date`<=\"" + date_end.ToString() + "\" order by `Date` desc";
+            string dataSet_temp_str = "select * from " + ShuJuKu.Table1_ShiJIna_JieDian + " where `Date`>=\"" + date_begin.ToString() + "\" and `Date`<=\"" + date_end.ToString() + "\" order by `Date` desc";
             //string dataSet_temp_str = "select * from test5 order by `Date` desc";
-            DataSet dataSet_temp = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, dataSet_temp_str, null);
+            DataSet dataSet_temp = MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, dataSet_temp_str, null);
             DataRowCollection temp_DataRow = dataSet_temp.Tables[0].Rows;//获取列
 
             //将ListView中的数据导入Excel中

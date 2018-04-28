@@ -55,6 +55,8 @@ namespace WpfApplication1
 
         public MainWindow()
         {
+            Init_MySQL();
+
             InitializeComponent();
             Init_Tab1_ComboBox();
             Init_Tab2_ComboBox();
@@ -73,7 +75,7 @@ namespace WpfApplication1
 
             Init_Map();
 
-            Init_MySQL();
+            
 
 
 
@@ -90,6 +92,11 @@ namespace WpfApplication1
 #if YanShi
             tabcontrol.SelectedIndex = 7;
 #endif
+        }
+
+        public string Init_Output_Conn(string replace_str_tt)
+        {
+            return MySqlHelper.Conn.Replace("lunge_test", replace_str_tt);
         }
 
         #region//有关数据库加载
@@ -251,7 +258,7 @@ namespace WpfApplication1
             string[] temp_array_str = ShuJuJieXi(message);
             string str = "INSERT INTO " + ShuJuKu.Table1_ShiJIna_JieDian + " ( `id`, `name`, `type`, `gas type`, `DanWei`,`status`, `NongDu`, `DiXian`, `GaoXian`, `DianLiang`, `WenDu`, `Date` ) " +
         "VALUES ( \"1\",\"2\",\"3\",\"" + temp_array_str[0] + "\",\"" + temp_array_str[1] + "\",\"" + temp_array_str[2] + "\",\"" + temp_array_str[3] + "\",\"" + temp_array_str[4] + "\",\"" + temp_array_str[5] + "\",\"" + temp_array_str[6] + "\",\"" + temp_array_str[7] + "\",now());";
-            MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, str, null);
+            MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, str, null);
 
             Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
         }

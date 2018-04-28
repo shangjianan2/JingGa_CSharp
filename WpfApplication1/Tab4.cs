@@ -35,8 +35,8 @@ namespace WpfApplication1
         public void Init_test5_Mem_Tab4_array(ref test5_mem_Tab4[] test5_Mem_array_tt)
         {
             //添加列
-            string dataSet_temp_str = "select * from users";
-            DataSet dataSet_temp = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, dataSet_temp_str, null);
+            string dataSet_temp_str = "select * from " + ShuJuKu.Table2_YongHu;
+            DataSet dataSet_temp = MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, dataSet_temp_str, null);
             DataRowCollection temp_DataRow = dataSet_temp.Tables[0].Rows;//获取列
 
             CurrentLength_test5_Mem_Tab4_array = temp_DataRow.Count;//把当前数据库中数据的数量赋值给CurrentLength_test5_Mem_Tab4_array
@@ -55,10 +55,10 @@ namespace WpfApplication1
                 return;
 
             //insert into users (`name`, `password`) VALUES ( );
-            string temp_str = "insert into users (`name`, `password`) VALUES ( \"" + Tab4_AddUserName_TextBox.Text + "\", \"" + Tab4_AddPassWord_TextBox.Text + "\" );";
+            string temp_str = "insert into " + ShuJuKu.Table2_YongHu + " (`name`, `password`) VALUES ( \"" + Tab4_AddUserName_TextBox.Text + "\", \"" + Tab4_AddPassWord_TextBox.Text + "\" );";
             try
             {
-                MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, temp_str, null);
+                MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, temp_str, null);
                 CurrentLength_test5_Mem_Tab4_array++;//如果运行到这里说明已经成功添加，所以将当前用户数量计数器的数值增加
             }
             catch
@@ -83,8 +83,8 @@ namespace WpfApplication1
 
                 if (System.Windows.MessageBox.Show("您确定要删除吗？", "提示：", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
                 {
-                    string command_str = "delete from users where name=\"" + DeletedUser + "\"";
-                    MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, command_str, null);
+                    string command_str = "delete from " + ShuJuKu.Table2_YongHu + " where name=\"" + DeletedUser + "\"";
+                    MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, command_str, null);
                     CurrentLength_test5_Mem_Tab4_array--;//如果运行到这里，说明成功从数据库中删除数据。所以将计数器减一
                 }
                 else

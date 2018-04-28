@@ -280,7 +280,7 @@ namespace WpfApplication1
                 //从最近的日期开始查找，如果今天没有数据，就查找近两天的数据，如果近两天也没有，就查找近三天的，以此类推
                 for (int j = 1; dataSet_temp.Tables.Count <= 0 || dataSet_temp.Tables[0].Rows.Count <= 0; j++)
                 {
-                    dataSet_temp = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, "select * from test5 where to_days(now())-to_days(Date)<" + j.ToString() + " and id=\"" + (i + 1).ToString() + "\" order by `Date` desc", null);
+                    dataSet_temp = MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, "select * from " + ShuJuKu.Table1_ShiJIna_JieDian + " where to_days(now())-to_days(Date)<" + j.ToString() + " and id=\"" + (i + 1).ToString() + "\" order by `Date` desc", null);
                 }
 
                 DataRowCollection temp_DataRow = dataSet_temp.Tables[0].Rows;//获取列
