@@ -278,7 +278,7 @@ namespace WpfApplication1
                 //DataSet dataSet_temp = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, "select * from test5 where to_days(now())-to_days(Date)<2 and id=\"" + (i + 1).ToString() + "\" order by `Date` desc", null);
                 DataSet dataSet_temp = new DataSet();
                 //显示每个节点的最新数据
-                dataSet_temp = MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, "select * from " + ShuJuKu.Table1_ShiJIna_JieDian + " where id=\"" + (65).ToString() + "\" order by `Date` desc limit 1", null);
+                dataSet_temp = MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, "select * from " + ShuJuKu.Table1_ShiJIna_JieDian + " where id=\"" + (i + 1).ToString() + "\" order by `Date` desc limit 1", null);
 
 
                 DataRowCollection temp_DataRow = dataSet_temp.Tables[0].Rows;//获取列
