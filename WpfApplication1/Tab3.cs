@@ -285,7 +285,7 @@ namespace WpfApplication1
 
                 //如果没有数据就退出
                 if (temp_DataRow.Count <= 0)
-                    return;
+                    continue;
 
                 test5_Mem_array_tt[i].ID = temp_DataRow[0][0].ToString();
                 test5_Mem_array_tt[i].Name = temp_DataRow[0][1].ToString();
