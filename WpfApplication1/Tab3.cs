@@ -258,6 +258,7 @@ namespace WpfApplication1
         }
         #endregion
 
+        #region//所有节点状态显示
         public void Init_Tab3_CurrentStatus_ListView(ref test5_mem[] test5_Mem_array_tt, ListView listView_tt)
         {
             listView_tt.ItemsSource = test5_Mem_array_tt;
@@ -303,6 +304,22 @@ namespace WpfApplication1
                 test5_Mem_array_tt[i].Date = temp_DataRow[0][11].ToString();
             }
         }
+        #endregion
+
+        #region
+        public void Init_Tab3_Warning_ListView(ref test5_mem[] test5_Mem_array_tt, ListView listView_tt)
+        {
+            listView_tt.Items.Clear();
+            foreach(test5_mem mem in test5_Mem_array_tt)
+            {
+                if(Convert.ToDouble(mem.WenDu) > 30)
+                {
+                    listView_tt.Items.Add(mem);
+                }
+            }
+
+        }
+        #endregion
 
         #region//地图功能的实现
         private void img_MouseDown(object sender, MouseButtonEventArgs e)

@@ -61,7 +61,10 @@ namespace WpfApplication1
             Init_Tab1_ComboBox();
             Init_Tab2_ComboBox();
             Init_Tab3_CurrentStatus_ListView(ref test5_Mem_array, Tab3_CurrentStatus_ListView);
+            
             Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
+            
+
             Init_ShiJianQuJian_GroupBox();
             Init_translateTransform_Array();
             Init_scaleTransform_Array();
@@ -261,6 +264,12 @@ namespace WpfApplication1
             MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, str, null);
 
             Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
+
+            Action<bool> action = (x) =>//每次都对当前所有节点进行一次监测
+            {
+                Init_Tab3_Warning_ListView(ref test5_Mem_array, Tab3_Warning_ListView);
+            };
+            this.Dispatcher.Invoke(action, true);
         }
 #endregion
 
