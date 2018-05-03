@@ -95,6 +95,8 @@ namespace WpfApplication1
 #if YanShi
             tabcontrol.SelectedIndex = 7;
 #endif
+
+            Init_Tab3_Warning_ListView(ref test5_Mem_array, Tab3_Warning_ListView);
         }
 
         public string Init_Output_Conn(string replace_str_tt)

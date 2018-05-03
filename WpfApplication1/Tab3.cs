@@ -312,9 +312,16 @@ namespace WpfApplication1
             listView_tt.Items.Clear();
             foreach(test5_mem mem in test5_Mem_array_tt)
             {
-                if(Convert.ToDouble(mem.WenDu) > 30)
+                if (mem.ID == null)//因为可能存在有些节点此时并没有数据
+                    continue;
+                if (Convert.ToDouble(mem.WenDu) > 30)
                 {
                     listView_tt.Items.Add(mem);
+                    rectangle_Array_Tab3[Convert.ToInt16(mem.ID) - 1].Fill = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+                }
+                else
+                {
+                    rectangle_Array_Tab3[Convert.ToInt16(mem.ID) - 1].Fill = new SolidColorBrush(Color.FromRgb(0, 255, 0));
                 }
             }
 
