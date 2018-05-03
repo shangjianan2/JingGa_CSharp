@@ -8,6 +8,8 @@ namespace IP_PeiZhiWenJian_JieXi
     {
         private byte[] ip_private = new byte[4];
         private UInt16 DuanKou_private;
+        private byte[] remote_IP = new byte[4];
+        private UInt16 remote_DuanKou_private;
         /// <summary>
         ///  根据配置IP配置文件的内容解析出IP地址及端口号，并将其存放在这个类中的相应变量中
         /// </summary>
@@ -24,7 +26,7 @@ namespace IP_PeiZhiWenJian_JieXi
             s = s.Replace("\r\n", ";");//将回车符("\r\n")换成";"
             string[] s_Array_str = s.Split('.', ':', ';');//以分号将配置文件中的多个ip地址及相应端口号分割
 
-            if(s_Array_str.Length < 5)//监测长度，长度最起码是5
+            if(s_Array_str.Length < 10)//监测长度，长度最起码是10,包含本地地址和远程地址
             {
                 throw (new System.Exception("IP_PZWJ_JieXi error"));
             }
@@ -34,6 +36,13 @@ namespace IP_PeiZhiWenJian_JieXi
                 ip_private[i] = Convert.ToByte(s_Array_str[i]);
             }
             DuanKou_private = Convert.ToUInt16(s_Array_str[4]);//将第五个作为端口
+
+            //远程地址
+            for (int i = 0; i < 4; i++)//将前四个作为ip地址
+            {
+                remote_IP[i] = Convert.ToByte(s_Array_str[i + 5]);
+            }
+            remote_DuanKou_private = Convert.ToUInt16(s_Array_str[9]);//将第10个作为端口
             #endregion
         }
 
@@ -65,6 +74,38 @@ namespace IP_PeiZhiWenJian_JieXi
                 else
                 {
                     DuanKou_private = value;
+                }
+            }
+        }
+
+        public byte[] Remote_IP
+        {
+            get { return remote_IP; }
+            set
+            {
+                if(value == null)
+                {
+                    remote_IP = new byte[] { 127, 0, 0, 1 };
+                }
+                else
+                {
+                    remote_IP = value;
+                }
+            }
+        }
+
+        public UInt16 Remote_DuanKou
+        {
+            get { return remote_DuanKou_private; }
+            set
+            {
+                if(value < 0)
+                {
+                    remote_DuanKou_private = 8081;
+                }
+                else
+                {
+                    remote_DuanKou_private = value;
                 }
             }
         }

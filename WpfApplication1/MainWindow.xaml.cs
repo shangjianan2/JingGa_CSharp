@@ -49,6 +49,9 @@ namespace WpfApplication1
 
         public mysql_PZWJ_JieXi ShuJuKu = null;
 
+        public byte[] NBIoT_IP_Byte_Array = new byte[4];
+        public UInt16 NBIoT_DuanKou;
+
 #if YanShi
         public int flag_Tab8 = 0;
 #endif
@@ -166,7 +169,7 @@ namespace WpfApplication1
         {
             byte[] IP_byte_array = new byte[4];
             int DuanKou_in = 0;
-            Init_PeiZhiIPAddress(ref IP_byte_array, ref DuanKou_in);
+            Init_PeiZhiIPAddress(ref IP_byte_array, ref DuanKou_in, ref NBIoT_IP_Byte_Array, ref NBIoT_DuanKou);
             //初始化udp通讯类
             mysql_Thread = new UDP_Communication(IP_byte_array, DuanKou_in);
             //注册事件
@@ -179,15 +182,17 @@ namespace WpfApplication1
             SendToIoT = new System.Threading.Timer(new System.Threading.TimerCallback(SendToIoTCall), this, 3000, 3000);
         }
 
-        public void Init_PeiZhiIPAddress(ref byte[] temp_byte_array, ref int temp_duankou_int)
+        public void Init_PeiZhiIPAddress(ref byte[] temp_byte_array, ref int temp_duankou_int, ref byte[] remote_byte_array, ref UInt16 remote_duankou_int)
         {
             try
             {
                 #region
-                
+
                 IP_WJ_JieXi = new IP_PZWJ_JieXi("C:\\NBIoT\\IP.txt");
                 temp_byte_array = IP_WJ_JieXi.IP;
                 temp_duankou_int = IP_WJ_JieXi.DuanKou;
+                remote_byte_array = IP_WJ_JieXi.Remote_IP;
+                remote_duankou_int = IP_WJ_JieXi.Remote_DuanKou;
                 #endregion
             }
             catch
@@ -235,9 +240,9 @@ namespace WpfApplication1
             string temp_str = "ep=J4JFAJUGYS3GGF7Z&pw=123456";
             byte[] buff = System.Text.Encoding.ASCII.GetBytes(temp_str);
             
-            byte[] array_byte = new byte[4] { 115, 29, 240, 46 };//设定远程ip地址
+            byte[] array_byte = NBIoT_IP_Byte_Array;//设定远程ip地址
             IPAddress ip = new IPAddress(array_byte);
-            IPEndPoint lep = new IPEndPoint(ip, 6000);
+            IPEndPoint lep = new IPEndPoint(ip, NBIoT_DuanKou);
             
             mysql_Thread.newsock.Connect(lep);
             mysql_Thread.newsock.Send(buff);
