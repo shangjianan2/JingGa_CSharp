@@ -43,7 +43,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid FocusManager.FocusedElement="{Binding ElementName=Passwd_TextBox}">
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
                 <GradientStop Color="White" Offset="0.0" />
@@ -55,7 +55,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="Passwd_TextBox" Grid.Column="0" Grid.ColumnSpan="2" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBox x:Name="Passwd_TextBox" KeyDown="Passwd_TextBox_KeyDown" Grid.Column="0" Grid.ColumnSpan="2" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Button x:Name="Passwd_Button" Content="确认" Click="Passwd_Button_Click" Grid.Column="2" Width="50" Height="20" Style="{StaticResource ResourceKey=MyWpfButton}"/>
     </Grid>
 </Window>

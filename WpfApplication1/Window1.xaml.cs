@@ -46,5 +46,13 @@ namespace WpfApplication1
                 this.DialogResult = false;
             }
         }
+
+        private void Passwd_TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                Passwd_Button_Click(sender, e);
+            }
+        }
     }
 }
