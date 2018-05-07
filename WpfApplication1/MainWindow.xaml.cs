@@ -279,60 +279,6 @@ namespace WpfApplication1
             this.Dispatcher.Invoke(action, true);
         }
 #endregion
-
-        
-
-
-
-
-        //tab2
-        public void Init_Tab2_ComboBox()
-        {
-            Tab2_ComboBox.Items.Clear();
-            Tab2_ComboBox.Items.Add("用户维护");
-            Tab2_ComboBox.Items.Add("节点维护");
-            Tab2_ComboBox.Items.Add("地图维护");
-            Tab2_ComboBox.Items.Add("其他");
-            //Tab2_ComboBox.Items.Add(" ");
-        }
-
-        private void Tab2_ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (Tab2_ComboBox.SelectedItem == null)
-                return;
-            switch (Tab2_ComboBox.SelectedItem.ToString())
-            {
-                case "用户维护":
-                    tabcontrol.SelectedIndex = 3;
-                    break;
-                case "节点维护":
-                    tabcontrol.SelectedIndex = 4;
-                    break;
-                case "地图维护":
-                    tabcontrol.SelectedIndex = 5;
-                    break;
-                case "其他":
-                    tabcontrol.SelectedIndex = 6;
-                    break;
-            }
-        }
-
-        private void Tab2_Back_Button_Click(object sender, RoutedEventArgs e)
-        {
-            tabcontrol.SelectedIndex = 0;
-            Init_Tab1_ComboBox();
-        }
-
-        
-
-        
-
-        
-
-        
-
-        
-
                 
     }
 
