@@ -71,6 +71,7 @@
     <Compile Include="Tab5.cs" />
     <Compile Include="Tab6.cs" />
     <Compile Include="Tab7.cs" />
+    <Compile Include="Test_Enviroment.cs" />
     <Compile Include="UDP_Thread.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>

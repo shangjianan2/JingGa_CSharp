@@ -49,6 +49,8 @@ namespace WpfApplication1
 
         public mysql_PZWJ_JieXi ShuJuKu = null;
 
+        public byte[] Local_IP_Byte_Array = new byte[4];
+        public UInt16 Local_DuanKou;
         public byte[] NBIoT_IP_Byte_Array = new byte[4];
         public UInt16 NBIoT_DuanKou;
 
@@ -58,8 +60,8 @@ namespace WpfApplication1
 
         public MainWindow()
         {
-            Init_MySQL();
-
+            Init_QiDongJianCe();
+            
             InitializeComponent();
             Init_Tab1_ComboBox();
             Init_Tab2_ComboBox();
@@ -77,16 +79,8 @@ namespace WpfApplication1
             Init_scaleTransform_Array_Tab3();
             Init_rectangle_Array_Tab3();
 
-            Init_UDP();//初始化udp通讯，
-
             Init_Map();
-
             
-
-
-
-
-
             //为Tab4（用户维护界面）中的listview初始化
             Init_Tab4_CurrentStatus_ListView(ref test5_Mem_Tab4_array, Tab4_User_ListView);
             Init_test5_Mem_Tab4_array(ref test5_Mem_Tab4_array);
@@ -107,23 +101,7 @@ namespace WpfApplication1
             return MySqlHelper.Conn.Replace("lunge_test", replace_str_tt);
         }
 
-        #region//有关数据库加载
-        public void Init_MySQL()
-        {
-            string[] array_str = mysql_PZWJ_JieXi.read_mysql_PeiZhiWenJian("C:\\NBIoT\\mysql.txt");
-            if (array_str == null)
-                Application.Current.Shutdown();
-            try
-            {
-                ShuJuKu = new mysql_PZWJ_JieXi(array_str[0], array_str[1], array_str[2], array_str[3]);
-            }
-            catch(Exception ee)
-            {
-                MessageBox.Show(ee.Message, "error");
-                Application.Current.Shutdown();
-            }
-        }
-        #endregion
+        
 
         #region//有关地图加载
         public void Init_Map()
@@ -165,41 +143,7 @@ namespace WpfApplication1
         }
         #endregion
 
-        public void Init_UDP()
-        {
-            byte[] IP_byte_array = new byte[4];
-            int DuanKou_in = 0;
-            Init_PeiZhiIPAddress(ref IP_byte_array, ref DuanKou_in, ref NBIoT_IP_Byte_Array, ref NBIoT_DuanKou);
-            //初始化udp通讯类
-            mysql_Thread = new UDP_Communication(IP_byte_array, DuanKou_in);
-            //注册事件
-            mysql_Thread.rev_New2 += new recNewMessage2(rec2_NewMessage_Form1);
-            mysql_Thread.recThread_Start();
-
-            Init_NBIoT();//将NBIoT的远程地址绑定
-
-            //添加定时器，因为长时间上位机不向下位机发送指令上位机与云平台会断线
-            SendToIoT = new System.Threading.Timer(new System.Threading.TimerCallback(SendToIoTCall), this, 3000, 3000);
-        }
-
-        public void Init_PeiZhiIPAddress(ref byte[] temp_byte_array, ref int temp_duankou_int, ref byte[] remote_byte_array, ref UInt16 remote_duankou_int)
-        {
-            try
-            {
-                #region
-
-                IP_WJ_JieXi = new IP_PZWJ_JieXi("C:\\NBIoT\\IP.txt");
-                temp_byte_array = IP_WJ_JieXi.IP;
-                temp_duankou_int = IP_WJ_JieXi.DuanKou;
-                remote_byte_array = IP_WJ_JieXi.Remote_IP;
-                remote_duankou_int = IP_WJ_JieXi.Remote_DuanKou;
-                #endregion
-            }
-            catch
-            {
-                MessageBox.Show("IP配置文件加载失败", "加载失败");
-            }
-        }
+              
 
         public void SendToIoTCall(object state)
         {
@@ -235,17 +179,17 @@ namespace WpfApplication1
 #endif
         }
 
-        public void Init_NBIoT()
+        public void Init_NBIoT(byte[] NBIoT_IP_Byte_Array_tt, ushort NBIoT_DuanKou_tt, ref UDP_Communication mysql_Thread_tt)
         {
             string temp_str = "ep=J4JFAJUGYS3GGF7Z&pw=123456";
             byte[] buff = System.Text.Encoding.ASCII.GetBytes(temp_str);
             
-            byte[] array_byte = NBIoT_IP_Byte_Array;//设定远程ip地址
+            byte[] array_byte = NBIoT_IP_Byte_Array_tt;//设定远程ip地址
             IPAddress ip = new IPAddress(array_byte);
-            IPEndPoint lep = new IPEndPoint(ip, NBIoT_DuanKou);
-            
-            mysql_Thread.newsock.Connect(lep);
-            mysql_Thread.newsock.Send(buff);
+            IPEndPoint lep = new IPEndPoint(ip, NBIoT_DuanKou_tt);
+
+            mysql_Thread_tt.newsock.Connect(lep);
+            mysql_Thread_tt.newsock.Send(buff);
         }
 
 #region//rec2_NewMessage_Form1函数是rec_NewMessage_Form1函数的新的实现，可以返回源地址和源端口
