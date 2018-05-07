@@ -279,14 +279,20 @@ namespace WpfApplication1
                 //DataSet dataSet_temp = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, "select * from test5 where to_days(now())-to_days(Date)<2 and id=\"" + (i + 1).ToString() + "\" order by `Date` desc", null);
                 DataSet dataSet_temp = new DataSet();
                 //显示每个节点的最新数据
-                dataSet_temp = MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, "select * from " + ShuJuKu.Table1_ShiJIna_JieDian + " where id=\"" + (i + 1).ToString() + "\" order by `Date` desc limit 1", null);
+                string dateSet_temp_input_string_1 = "select " + ShuJuKu.Table1_ShiJIna_JieDian + ".id, " + ShuJuKu.Table3_JieDian + ".name, shuoming, `gas type`, danwei, status, nongdu, dixian, gaoxian, dianliang, wendu, date from " + ShuJuKu.Table1_ShiJIna_JieDian + ", " + ShuJuKu.Table3_JieDian + " where " + ShuJuKu.Table1_ShiJIna_JieDian + ".id=" + (i + 1).ToString() + " && " + ShuJuKu.Table1_ShiJIna_JieDian + ".id=" + ShuJuKu.Table3_JieDian + ".id order by date desc limit 1";
+                string dateSet_temp_input_string_2 = "select * from " + ShuJuKu.Table1_ShiJIna_JieDian + " where id=\"" + (i + 1).ToString() + "\" order by `Date` desc limit 1";
 
-
+                dataSet_temp = MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, dateSet_temp_input_string_1, null);
                 DataRowCollection temp_DataRow = dataSet_temp.Tables[0].Rows;//获取列
 
                 //如果没有数据就退出
                 if (temp_DataRow.Count <= 0)
-                    continue;
+                {
+                    dataSet_temp = MySqlHelper.GetDataSet(Init_Output_Conn(ShuJuKu.ShuJuKu_Name), CommandType.Text, dateSet_temp_input_string_2, null);
+                    temp_DataRow = dataSet_temp.Tables[0].Rows;//获取列
+                    if (temp_DataRow.Count <= 0)
+                        continue;
+                }
 
                 test5_Mem_array_tt[i].ID = temp_DataRow[0][0].ToString();
                 test5_Mem_array_tt[i].Name = temp_DataRow[0][1].ToString();

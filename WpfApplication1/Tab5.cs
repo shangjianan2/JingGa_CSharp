@@ -72,6 +72,8 @@ namespace WpfApplication1
             //Init_Tab5_CurrentStatus_ListView(ref test5_Mem_Tab5_array, Tab5_JieDian_ListView);
             Init_test5_Mem_Tab5_array(ref test5_Mem_Tab5_array);
             Init_Tab1_ComboBox();
+
+            Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
         }
 
         private void Tab5_DeleteUser_Button_Click(object sender, EventArgs e)
@@ -97,6 +99,7 @@ namespace WpfApplication1
                 Init_test5_Mem_Tab5_array(ref test5_Mem_Tab5_array);
                 Init_Tab1_ComboBox();
 
+                Init_test5_Mem_array(ref test5_Mem_array, size_chanel);
             }
             catch
             {
