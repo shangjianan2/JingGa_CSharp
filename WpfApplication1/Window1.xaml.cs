@@ -35,9 +35,9 @@ namespace WpfApplication1
 
         private void Passwd_Button_Click(object sender, EventArgs e)
         {
-            if (Passwd_TextBox.Text == "")
+            if (Passwd_TextBox.Password == "")
                 return;
-            if (mainWindow.passwd_str == Passwd_TextBox.Text)
+            if (mainWindow.passwd_str == Passwd_TextBox.Password)
             {
                 this.DialogResult = true;
             }
