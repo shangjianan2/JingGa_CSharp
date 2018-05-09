@@ -838,7 +838,8 @@
                             </LinearGradientBrush>
                         </Rectangle.Fill>
                     </Rectangle>
-                    <ListView x:Name="Tab3_Warning_ListView" Height="Auto" Width="Auto"  Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="1">
+                    <ListView x:Name="Tab3_Warning_ListView" Height="Auto" Width="Auto"  Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="1" ListView.Foreground = "Red">
+                        
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="ID" Width="70" DisplayMemberBinding="{Binding Path=ID}"/>
