@@ -65,7 +65,7 @@ namespace WpfApplication1
             }
             catch
             {
-                MessageBox.Show("此用户已添加", "error");
+                MessageBox.Show("此节点已添加", "error");
             }
             Tab5_JieDian_ListView.Items.Refresh();//添加这个就好使
             //为Tab5（用户维护界面）中的listview初始化
