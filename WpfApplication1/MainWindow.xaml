@@ -938,7 +938,7 @@
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="*"/>
 					</Grid.RowDefinitions>
-					<GroupBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Width="300" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center">
+					<GroupBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Width="400" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center">
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="*"/>
@@ -952,12 +952,12 @@
 								<RowDefinition Height="*"/>
 								<RowDefinition Height="2"/>
 							</Grid.RowDefinitions>
-							<Label Content="用户名" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="25,0.498,25,2.665"/>
-							<Label Content="密码" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="31,2.581"/>
-                            <TextBox x:Name="Tab4_AddUserName_TextBox" Grid.Column="1" Grid.Row="1" Width="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,2.498,8,4.665"/>
-                            <TextBox x:Name="Tab4_AddPassWord_TextBox" Grid.Column="1" Grid.Row="2" Width="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,4.581"/>
-                            <Button Click="Tab4_AddUser_Button_Click" Grid.Column="2" Grid.Row="1" Width="80" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,0.916,8,3.084" Content="添加用户" Style="{StaticResource ResourceKey=MyWpfButton_Tab4}"/>
-                            <Button Click="Tab4_DeleteUser_Button_Click" Grid.Column="2" Grid.Row="3" Width="80" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,2" Content="删除用户" Grid.RowSpan="1" Style="{StaticResource ResourceKey=MyWpfButton_Tab4}"/>
+							<Label Content="用户名" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="25,0.498,25,2.665" FontSize="24"/>
+                            <Label Content="密码" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="31,2.581"  FontSize="24"/>
+                            <TextBox x:Name="Tab4_AddUserName_TextBox" Grid.Column="1" Grid.Row="1" Width="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,2.498,8,4.665"  FontSize="24"/>
+                            <TextBox x:Name="Tab4_AddPassWord_TextBox" Grid.Column="1" Grid.Row="2" Width="110" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,4.581"  FontSize="24"/>
+                            <Button Click="Tab4_AddUser_Button_Click" Grid.Column="2" Grid.Row="1" Width="110" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,0.916,8,3.084" Content="添加用户" Style="{StaticResource ResourceKey=MyWpfButton_Tab4}"  FontSize="24"/>
+                            <Button Click="Tab4_DeleteUser_Button_Click" Grid.Column="2" Grid.Row="3" Width="110" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="8,2" Content="删除用户" Grid.RowSpan="1" Style="{StaticResource ResourceKey=MyWpfButton_Tab4}"  FontSize="24"/>
 						</Grid>
 					</GroupBox>
 
@@ -991,7 +991,7 @@
 						<RowDefinition Height="*"/>
 						<RowDefinition Height="*"/>
 					</Grid.RowDefinitions>
-					<GroupBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Width="300" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+					<GroupBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Width="400" Height="400" HorizontalAlignment="Center" VerticalAlignment="Center">
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="*"/>
@@ -1007,28 +1007,28 @@
 								<RowDefinition Height="*"/>
 								<RowDefinition Height="2"/>
 							</Grid.RowDefinitions>
-							<Label Content="ID" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Label Content="名称" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Label Content="编码" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-							<Label Content="说明" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							<Label Content="ID" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+                            <Label Content="名称" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+                            <Label Content="编码" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+                            <Label Content="说明" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
 
-                            <TextBox x:Name="Tab5_AddID_TextBox" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
-                            <TextBox x:Name="Tab5_AddName_TextBox" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
-                            <TextBox x:Name="Tab5_AddBianMa_TextBox" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
-                            <TextBox x:Name="Tab5_AddShuoMing_TextBox" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80"/>
+                            <TextBox x:Name="Tab5_AddID_TextBox" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="110" FontSize="24"/>
+                            <TextBox x:Name="Tab5_AddName_TextBox" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="110" FontSize="24"/>
+                            <TextBox x:Name="Tab5_AddBianMa_TextBox" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="110" FontSize="24"/>
+                            <TextBox x:Name="Tab5_AddShuoMing_TextBox" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Width="110" FontSize="24"/>
 
-                            <Button Content="添加" Click="Tab5_AddUser_Button_Click" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="25" Style="{StaticResource ResourceKey=MyWpfButton_Tab5}"/>
-                            <Button Content="删除" Click="Tab5_DeleteUser_Button_Click" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="80" Height="25" Style="{StaticResource ResourceKey=MyWpfButton_Tab5}"/>
+                            <Button Content="添加" Click="Tab5_AddUser_Button_Click" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="110" Height="40" Style="{StaticResource ResourceKey=MyWpfButton_Tab5}"  FontSize="24"/>
+                            <Button Content="删除" Click="Tab5_DeleteUser_Button_Click" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="110" Height="40" Style="{StaticResource ResourceKey=MyWpfButton_Tab5}"  FontSize="24"/>
 						</Grid>
 					</GroupBox>
 
-                    <ListView x:Name="Tab5_JieDian_ListView" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Height="Auto" Width="Auto">
+                    <ListView x:Name="Tab5_JieDian_ListView" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Height="Auto" Width="Auto" FontSize="24">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="ID" Width="70" DisplayMemberBinding="{Binding Path=ID}"/>
-                                <GridViewColumn Header="名称" Width="70" DisplayMemberBinding="{Binding Path=Name}"/>
-                                <GridViewColumn Header="编码" Width="70" DisplayMemberBinding="{Binding Path=BianMa}"/>
-                                <GridViewColumn Header="说明" Width="70" DisplayMemberBinding="{Binding Path=ShuoMing}"/>
+                                <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding Path=ID}"/>
+                                <GridViewColumn Header="名称" Width="100" DisplayMemberBinding="{Binding Path=Name}"/>
+                                <GridViewColumn Header="编码" Width="100" DisplayMemberBinding="{Binding Path=BianMa}"/>
+                                <GridViewColumn Header="说明" Width="100" DisplayMemberBinding="{Binding Path=ShuoMing}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>
