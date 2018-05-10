@@ -108,10 +108,10 @@ namespace WpfApplication1
                 case 0x00:
                     temp_GaoLiangWei = 1;
                     break;
-                case 0x01:
+                case 0x40:
                     temp_GaoLiangWei = 10;
                     break;
-                case 0x02:
+                case 0x80:
                     temp_GaoLiangWei = 100;
                     break;
             }
