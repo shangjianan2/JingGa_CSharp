@@ -7,7 +7,7 @@ namespace WpfApplication1
 {
     public partial class MainWindow : Window
     {
-        const int message_length = 14; 
+        const int message_length = 21; 
         public string[] ShuJuJieXi(byte[] temp_byte_array)
         {
             int[] array_int = new int[message_length];//前面数据可能两个数据放一个字节了
@@ -28,17 +28,17 @@ namespace WpfApplication1
                 array_int[i] = temp_byte_array[i];
             }
 
-            JianCeQiTiLeiXing = array_int[0] & 0x0f;
-            DanWei = array_int[1];
-            TanCeQiZhuangTai = array_int[2];
+            JianCeQiTiLeiXing = array_int[4] & 0x0f;
+            DanWei = array_int[5];
+            TanCeQiZhuangTai = array_int[6];
 
-            JieXinQiTiNongDu(ref QiTiNongDu, array_int[3], array_int[4]);
-            JieXinQiTiNongDu(ref DiXianJingBao, array_int[5], array_int[6]);
-            JieXinQiTiNongDu(ref GaoXianJingBao, array_int[7], array_int[8]);
+            JieXinQiTiNongDu(ref QiTiNongDu, array_int[7], array_int[8]);
+            JieXinQiTiNongDu(ref DiXianJingBao, array_int[9], array_int[10]);
+            JieXinQiTiNongDu(ref GaoXianJingBao, array_int[11], array_int[12]);
 
-            LiDianChiDianLiang = array_int[9];
+            LiDianChiDianLiang = array_int[13];
 
-            JieXiWenDu(ref WenDu, array_int[10], array_int[11]);
+            JieXiWenDu(ref WenDu, array_int[14], array_int[15]);
 
             //准备打印
             string temp_Display_str;
