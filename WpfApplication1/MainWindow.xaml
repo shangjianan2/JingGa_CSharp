@@ -961,11 +961,11 @@
 						</Grid>
 					</GroupBox>
 
-                    <ListView x:Name="Tab4_User_ListView" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Center" Height="Auto" Width="300">
+                    <ListView x:Name="Tab4_User_ListView" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Height="Auto" Width="Auto" FontSize="24">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="UserName" Width="70" DisplayMemberBinding="{Binding Path=UserName}"/>
-                                <GridViewColumn Header="PassWord" Width="70" DisplayMemberBinding="{Binding Path=PassWord}"/>
+                                <GridViewColumn Header="UserName" Width="250" DisplayMemberBinding="{Binding Path=UserName}"/>
+                                <GridViewColumn Header="PassWord" Width="250" DisplayMemberBinding="{Binding Path=PassWord}"/>
                             </GridView>
                         </ListView.View>
                         
